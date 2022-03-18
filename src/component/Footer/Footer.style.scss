@@ -1,8 +1,16 @@
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
+@import "../../style/main";
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+.attribution {
+  position: fixed;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  color: $white;
+
+  & a {
+    color: $dark-text;
+    $font-family: $font-family;
+  }
 }

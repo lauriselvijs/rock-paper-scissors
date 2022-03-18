@@ -1,0 +1,21 @@
+@import "../../style/main";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 80px;
+  width: 500px;
+  outline: $header-outline solid 2px;
+  border-radius: 10px 10px;
+}
+
+.game-logo {
+  height: 70px;
+  width: 160px;
+}

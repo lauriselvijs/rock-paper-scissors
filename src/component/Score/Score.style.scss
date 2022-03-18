@@ -1,0 +1,26 @@
+@import "../../style/main";
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 100px;
+  background-color: $white;
+  border-radius: 10px 10px;
+
+  &-text {
+    color: $score-text;
+    font-size: 10px;
+    font-weight: $font-weight-semi-bold;
+  }
+
+  &-result {
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
+    font-size: 42px;
+    color: $dark-text;
+    line-height: 85%;
+  }
+}

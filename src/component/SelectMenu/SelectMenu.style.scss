@@ -1,0 +1,29 @@
+@import "../../style/main";
+
+.select-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .paper {
+    position: absolute;
+    left: 32%;
+    top: 51%;
+    transform: scale(1.5);
+  }
+
+  .scissors {
+    position: absolute;
+    left: 75%;
+    top: -17%;
+    transform: scale(1.5);
+  }
+
+  .rock {
+    position: absolute;
+    left: -10%;
+    top: -17%;
+    transform: scale(1.5);
+  }
+}

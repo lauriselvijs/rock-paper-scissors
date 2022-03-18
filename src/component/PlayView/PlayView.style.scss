@@ -1,0 +1,41 @@
+@import "../../style/main";
+
+.play-view {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 600px;
+  height: 800px;
+  justify-items: center;
+
+  .you-picked {
+    color: $white;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 1px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  .house-picked {
+    @extend .you-picked;
+  }
+
+  .paper {
+    transform: scale(2.2);
+
+    &-winner {
+    }
+  }
+  .scissors {
+    transform: scale(2.2);
+
+    &-winner {
+    }
+  }
+  .rock {
+    transform: scale(2.2);
+
+    &-winner {
+    }
+  }
+}
