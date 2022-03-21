@@ -2,6 +2,7 @@ import "./App.scss";
 import Footer from "./component/Footer/";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Root from "./route/Root";
+import RulesModal from "./component/RulesModal/RulesModal.component";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           element={
             <>
               <Root />
+              <RulesModal />
             </>
           }
         ></Route>

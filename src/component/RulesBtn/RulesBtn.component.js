@@ -2,7 +2,7 @@ import React from "react";
 import "./RulesBtn.style.scss";
 
 const RulesBtn = () => {
-  return <div className="rules">RULES</div>;
+  return <button className="rules">RULES</button>;
 };
 
 export default RulesBtn;

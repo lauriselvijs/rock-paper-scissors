@@ -7,12 +7,12 @@ import "./SelectMenu.style.scss";
 
 const SelectMenu = () => {
   return (
-    <div className="select-menu">
+    <section className="select-menu">
       <img src={triangle} alt="Triangle" className="triangle" />
       <img src={paper} alt="Paper" className="paper" />
       <img src={scissors} alt="Scissor" className="scissors" />
       <img src={rock} alt="Rock" className="rock" />
-    </div>
+    </section>
   );
 };
 
