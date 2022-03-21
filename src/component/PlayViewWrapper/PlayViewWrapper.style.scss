@@ -1,0 +1,14 @@
+@import "../../style/main";
+
+.play-view {
+  display: flex;
+  align-items: flex-end;
+  gap: 170px;
+  position: relative;
+}
+
+@media only screen and (max-width: 375px) {
+  .play-view {
+    transform: scale(0.6, 0.6);
+  }
+}

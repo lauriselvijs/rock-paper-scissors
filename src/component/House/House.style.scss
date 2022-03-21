@@ -1,0 +1,49 @@
+@import "../../style/main";
+
+.house {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  &-picked {
+    @include player-name;
+  }
+
+  .winner-gradient-house {
+    @include winner-gradient;
+    top: -50px;
+    left: -205px;
+    // top: -130px;
+    // left: 100px;
+  }
+}
+
+.paper {
+  transform: scale(2);
+}
+
+.scissors {
+  transform: scale(2);
+}
+
+.rock {
+  transform: scale(2);
+}
+
+@media only screen and (max-width: 375px) {
+  .house {
+    flex-direction: column-reverse;
+    padding-top: 90px;
+    justify-content: space-between;
+    width: 150px;
+    height: 310px;
+
+    .winner-gradient-house {
+      top: -125px;
+      left: -195px;
+      transform: scale(0.8);
+    }
+  }
+}

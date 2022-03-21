@@ -1,0 +1,14 @@
+@import "../../style/main";
+
+.menu-view {
+  display: flex;
+  align-items: flex-end;
+  gap: 170px;
+  position: relative;
+}
+
+@media only screen and (max-width: 375px) {
+  .menu-view {
+    transform: scale(0.7, 0.7);
+  }
+}

@@ -1,0 +1,47 @@
+@import "../../style/main";
+
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  .you-picked {
+    @include player-name;
+  }
+
+  .winner-gradient {
+    @include winner-gradient;
+    top: -50px;
+    left: -215px;
+  }
+}
+
+.paper {
+  transform: scale(2);
+}
+
+.scissors {
+  transform: scale(2);
+}
+
+.rock {
+  transform: scale(2);
+}
+
+@media only screen and (max-width: 375px) {
+  .player {
+    flex-direction: column-reverse;
+    padding-top: 90px;
+    justify-content: space-between;
+    width: 130px;
+    height: 310px;
+
+    .winner-gradient {
+      top: -125px;
+      left: -210px;
+      transform: scale(0.8);
+    }
+  }
+}

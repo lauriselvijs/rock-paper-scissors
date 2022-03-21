@@ -4,7 +4,13 @@ import Header from "../../component/Header";
 import Score from "../../component/Score";
 import RulesBtn from "../../component/RulesBtn";
 import SelectMenu from "../../component/SelectMenu";
-import PlayView from "../../component/PlayView/PlayView.component";
+import PlayViewWrapper from "../../component/PlayViewWrapper";
+import Player from "../../component/Player";
+import House from "../../component/House";
+import GameResultWrapper from "../../component/GameResultWrapper";
+import GameMsg from "../../component/GameMsg";
+import PlayAgainBtn from "../../component/PlayAgainBtn";
+import MenuViewWrapper from "../../component/MenuViewWrapper/MenuViewWrapper.component";
 
 const Root = () => {
   return (
@@ -12,8 +18,17 @@ const Root = () => {
       <Header>
         <Score />
       </Header>
-      {/* <SelectMenu /> */}
-      <PlayView />
+      <PlayViewWrapper>
+        <Player />
+        <GameResultWrapper>
+          <GameMsg />
+          <PlayAgainBtn />
+        </GameResultWrapper>
+        <House />
+      </PlayViewWrapper>
+      {/* <MenuViewWrapper>
+        <SelectMenu />
+      </MenuViewWrapper> */}
       <RulesBtn />
     </main>
   );
