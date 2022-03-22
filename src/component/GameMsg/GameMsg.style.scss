@@ -6,4 +6,25 @@
   font-weight: $font-weight-bold;
   font-size: 32px;
   padding: 15px;
+  animation: msg-animation;
+  animation-iteration-count: 3;
+  animation-duration: 0.8s;
+
+  @keyframes msg-animation {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 }

@@ -1,0 +1,1 @@
+export const SET_GESTURE_ACTION = "SET_GESTURE_ACTION";

@@ -10,4 +10,8 @@
   font-weight: $font-weight-semi-bold;
   color: $play-btn-color;
   font-size: 12px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }

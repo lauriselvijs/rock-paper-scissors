@@ -1,8 +1,11 @@
 import React from "react";
 import "./GameMsg.style.scss";
+import { Gesture } from "../../util/Gesture";
 
 const GameMsg = () => {
-  return <div className="game-msg">YOU LOOSE</div>;
+  const { compareThreeGestures } = Gesture;
+
+  return <div className="game-msg">{compareThreeGestures()}</div>;
 };
 
 export default GameMsg;

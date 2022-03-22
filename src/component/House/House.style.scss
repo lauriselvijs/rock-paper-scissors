@@ -13,23 +13,57 @@
 
   .winner-gradient-house {
     @include winner-gradient;
-    top: -50px;
+    top: -55px;
     left: -205px;
-    // top: -130px;
-    // left: 100px;
   }
-}
 
-.paper {
-  transform: scale(2);
-}
+  .image-loop {
+    width: 107px;
+    height: 110px;
+    animation: item-loop;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 6;
+    animation-delay: 1s;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scale(2);
+    background-image: url("../../asset/images/empty-selection.svg");
 
-.scissors {
-  transform: scale(2);
-}
+    @keyframes item-loop {
+      0% {
+        background-image: url("../../asset/images/paper.svg");
+      }
+      33% {
+        background-image: url("../../asset/images/scissors.svg");
+      }
+      100% {
+        background-image: url("../../asset/images/rock.svg");
+      }
+    }
+  }
 
-.rock {
-  transform: scale(2);
+  .paper {
+    width: 107px;
+    height: 110px;
+    background-image: url("../../asset/images/paper.svg");
+    transform: scale(2);
+  }
+
+  .scissors {
+    width: 107px;
+    height: 110px;
+    background-image: url("../../asset/images/scissors.svg");
+    transform: scale(2);
+  }
+
+  .rock {
+    width: 107px;
+    height: 110px;
+    background-image: url("../../asset/images/rock.svg");
+    transform: scale(2);
+  }
 }
 
 @media only screen and (max-width: 375px) {

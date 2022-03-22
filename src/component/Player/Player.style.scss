@@ -14,20 +14,20 @@
   .winner-gradient {
     @include winner-gradient;
     top: -50px;
-    left: -215px;
+    left: -210px;
   }
-}
 
-.paper {
-  transform: scale(2);
-}
+  .paper {
+    transform: scale(2);
+  }
 
-.scissors {
-  transform: scale(2);
-}
+  .scissors {
+    transform: scale(2);
+  }
 
-.rock {
-  transform: scale(2);
+  .rock {
+    transform: scale(2);
+  }
 }
 
 @media only screen and (max-width: 375px) {
