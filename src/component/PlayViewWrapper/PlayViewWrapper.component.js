@@ -6,8 +6,6 @@ import { useSelector } from "react-redux";
 function PlayViewWrapper({ children }) {
   const showAnimation = useSelector((state) => state.gesture.showAnimation);
 
-  console.log(showAnimation);
-
   return (
     <section className={showAnimation ? "play-view-animation" : "play-view"}>
       {children}
