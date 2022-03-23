@@ -1,3 +1,3 @@
-import PlayAgainBtn from "./PlayAgainBtn.component";
+import PlayAgainBtn from './PlayAgainBtn.component';
 
 export default PlayAgainBtn;

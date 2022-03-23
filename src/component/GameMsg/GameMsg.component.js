@@ -1,11 +1,17 @@
-import React from "react";
-import "./GameMsg.style.scss";
-import { Gesture } from "../../util/Gesture";
+import React from 'react';
+import './GameMsg.style.scss';
+import { useSelector } from 'react-redux';
+import { Gesture } from '../../util/Gesture';
 
-const GameMsg = () => {
-  const { compareThreeGestures } = Gesture;
+const { checkIfPlayerWinRPS } = Gesture;
 
-  return <div className="game-msg">{compareThreeGestures()}</div>;
-};
+function GameMsg() {
+  const houseGesture = useSelector((state) => state.gesture.houseGesture);
+  const gesture = useSelector((state) => state.gesture.gesture);
+
+  return (
+    <div className="game-msg">{checkIfPlayerWinRPS(gesture, houseGesture)}</div>
+  );
+}
 
 export default GameMsg;

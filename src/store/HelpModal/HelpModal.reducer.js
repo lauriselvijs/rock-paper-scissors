@@ -1,7 +1,8 @@
-import { SHOW_MODAL } from "./HelpModal.action.type";
+import { SHOW_MODAL, SHOW_ANIMATION } from './HelpModal.action.type';
 
 const initialState = {
   modalOpen: false,
+  animationEnd: false,
 };
 
 const HelpModalReducer = (state = initialState, action) => {
@@ -9,7 +10,12 @@ const HelpModalReducer = (state = initialState, action) => {
     case SHOW_MODAL:
       return {
         ...state,
-        modalOpen: !state.modalOpen,
+        modalOpen: action.payload,
+      };
+    case SHOW_ANIMATION:
+      return {
+        ...state,
+        animationEnd: action.payload,
       };
     default:
       return state;

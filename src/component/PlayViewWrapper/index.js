@@ -1,3 +1,3 @@
-import PlayViewWrapper from "./PlayViewWrapper.component";
+import PlayViewWrapper from './PlayViewWrapper.component';
 
 export default PlayViewWrapper;

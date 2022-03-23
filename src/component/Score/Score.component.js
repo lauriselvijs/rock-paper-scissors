@@ -1,13 +1,16 @@
-import React from "react";
-import "./Score.style.scss";
+import React from 'react';
+import './Score.style.scss';
+import { useSelector } from 'react-redux';
 
-const Score = () => {
+function Score() {
+  const score = useSelector((state) => state.score.score);
+
   return (
     <section className="score">
       <div className="score-text">SCORE</div>
-      <div className="score-result">12</div>
+      <div className="score-result">{score}</div>
     </section>
   );
-};
+}
 
 export default Score;

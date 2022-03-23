@@ -1,8 +1,13 @@
 import React from "react";
 import "./GameResultWrapper.style.scss";
+import PropTypes from "prop-types";
 
-const GameResultWrapper = ({ children }) => {
+function GameResultWrapper({ children }) {
   return <div className="game-info">{children}</div>;
+}
+
+GameResultWrapper.propTypes = {
+  children: PropTypes.node,
 };
 
 export default GameResultWrapper;

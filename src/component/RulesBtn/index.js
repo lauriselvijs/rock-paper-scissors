@@ -1,3 +1,3 @@
-import RulesBtn from "./RulesBtn.component";
+import RulesBtn from './RulesBtn.component';
 
 export default RulesBtn;

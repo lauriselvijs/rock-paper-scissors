@@ -1,28 +1,37 @@
-import React, { useState } from "react";
-import "./RulesModal.style.scss";
-import closeIcon from "../../asset/images/icon-close.svg";
-import rulesImg from "../../asset/images/image-rules.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { bindActionCreators } from "redux";
-import { HelpModalActions } from "../../store/action";
+import React from 'react';
+import './RulesModal.style.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import closeIcon from '../../asset/images/icon-close.svg';
+import rulesImg from '../../asset/images/image-rules.svg';
+import { HelpModalActions } from '../../store/action';
 
-const RulesModal = () => {
+function RulesModal() {
   const modalOpen = useSelector((state) => state.helpModal.modalOpen);
+  const animationEnd = useSelector((state) => state.helpModal.animationEnd);
 
   const dispatch = useDispatch();
-  const { setModalOpen } = bindActionCreators(HelpModalActions, dispatch);
+  const { setModalOpen, setShowAnimation } = bindActionCreators(
+    HelpModalActions,
+    dispatch,
+  );
 
   const onCloseBtnClick = () => {
-    setModalOpen();
+    setShowAnimation(true);
   };
 
-  console.log(modalOpen);
+  const onModalAnimationEnd = () => {
+    if (animationEnd) {
+      setShowAnimation(false);
+      setModalOpen(false);
+    }
+  };
 
   return (
     <div
-      className={modalOpen ? "rules-modal" : "rules-modal-close"}
-      // onAnimationEnd={{ display: closeModal ? "block" : "none" }}
-      // style={{ display: modalOpen ? "block" : "none" }}
+      className={animationEnd ? 'rules-modal-close' : 'rules-modal'}
+      onAnimationEnd={onModalAnimationEnd}
+      style={{ display: modalOpen ? 'block' : 'none' }}
     >
       <div className="rules-modal-content">
         <div className="modal-header">
@@ -38,6 +47,6 @@ const RulesModal = () => {
       </div>
     </div>
   );
-};
+}
 
 export default RulesModal;

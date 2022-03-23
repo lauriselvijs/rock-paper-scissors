@@ -12,18 +12,19 @@
   background-color: $black;
   background-color: rgba(0, 0, 0, 0.4);
 
-  // animation-name: module-animation;
-  // animation-duration: 1s;
-  // animation-fill-mode: forwards;
+  animation-name: module-animation-start;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 
-  // @keyframes module-animation {
-  //   from {
-  //     opacity: 1;
-  //   }
-  //   to {
-  //     opacity: 0;
-  //   }
-  // }
+  @keyframes module-animation-start {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 
   &-content {
     display: flex;
@@ -66,11 +67,11 @@
 .rules-modal-close {
   @extend .rules-modal;
 
-  animation-name: module-animation;
+  animation-name: module-animation-end;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 
-  @keyframes module-animation {
+  @keyframes module-animation-end {
     from {
       opacity: 1;
     }
@@ -85,6 +86,19 @@
   .rules-modal {
     padding-top: 0px;
     background-color: $white;
+
+    animation-name: module-animation-start;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+    @keyframes module-animation-start {
+      from {
+        height: 0%;
+      }
+      to {
+        height: 100%;
+      }
+    }
 
     .modal-header {
       justify-content: center;

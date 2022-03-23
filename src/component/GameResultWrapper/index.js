@@ -1,3 +1,3 @@
-import GameResultWrapper from "./GameResultWrapper.component";
+import GameResultWrapper from './GameResultWrapper.component';
 
 export default GameResultWrapper;

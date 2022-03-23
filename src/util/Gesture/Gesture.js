@@ -1,23 +1,55 @@
-export const compareThreeGestures = (playerGesture, homeGesture) => {
-  if (playerGesture === "rock" && homeGesture === "paper") {
-    return "YOU LOOSE";
-  } else if (playerGesture === "paper" && homeGesture === "rock") {
-    return "YOU WIN";
+import { Gestures } from '../../constant/Gesture';
+import { Participant } from '../../constant/Participant';
+
+const { HOUSE, PLAYER } = Participant;
+const { SCISSORS, PAPER, ROCK } = Gestures;
+
+export const checkIfPlayerWinRPS = (playerGesture, homeGesture) => {
+  if (playerGesture === ROCK && homeGesture === PAPER) {
+    return 'YOU LOOSE';
+  } if (playerGesture === PAPER && homeGesture === ROCK) {
+    return 'YOU WIN';
   }
 
-  if (playerGesture === "rock" && homeGesture === "scissors") {
-    return "YOU WIN";
-  } else if (playerGesture === "scissors" && homeGesture === "rock") {
-    return "YOU LOOSE";
+  if (playerGesture === ROCK && homeGesture === SCISSORS) {
+    return 'YOU WIN';
+  } if (playerGesture === SCISSORS && homeGesture === ROCK) {
+    return 'YOU LOOSE';
   }
 
-  if (playerGesture === "scissors" && homeGesture === "paper") {
-    return "YOU WIN";
-  } else if (playerGesture === "paper" && homeGesture === "scissors") {
-    return "YOU LOOSE";
+  if (playerGesture === SCISSORS && homeGesture === PAPER) {
+    return 'YOU WIN';
+  } if (playerGesture === PAPER && homeGesture === SCISSORS) {
+    return 'YOU LOOSE';
   }
 
   if (playerGesture === homeGesture) {
-    return "DRAW";
+    return 'DRAW';
   }
+};
+
+export const getWinnerRPS = (playerGesture, homeGesture) => {
+  if (playerGesture === ROCK && homeGesture === PAPER) {
+    return HOUSE;
+  } if (playerGesture === PAPER && homeGesture === ROCK) {
+    return PLAYER;
+  }
+
+  if (playerGesture === ROCK && homeGesture === SCISSORS) {
+    return PLAYER;
+  } if (playerGesture === SCISSORS && homeGesture === ROCK) {
+    return HOUSE;
+  }
+
+  if (playerGesture === SCISSORS && homeGesture === PAPER) {
+    return PLAYER;
+  } if (playerGesture === PAPER && homeGesture === SCISSORS) {
+    return HOUSE;
+  }
+};
+
+export const randomGesture = (...gestures) => {
+  const gesture = gestures[Math.floor(Math.random() * gestures.length)];
+
+  return gesture;
 };

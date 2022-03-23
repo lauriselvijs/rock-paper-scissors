@@ -13,8 +13,8 @@
 
   .winner-gradient-house {
     @include winner-gradient;
-    top: -55px;
-    left: -205px;
+    top: -60px;
+    left: -200px;
   }
 
   .image-loop {
@@ -25,7 +25,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-iteration-count: 6;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
     background-size: contain;
     background-repeat: no-repeat;
     transform: scale(2);

@@ -13,19 +13,11 @@
 
   .winner-gradient {
     @include winner-gradient;
-    top: -50px;
-    left: -210px;
+    top: -60px;
+    left: -215px;
   }
 
-  .paper {
-    transform: scale(2);
-  }
-
-  .scissors {
-    transform: scale(2);
-  }
-
-  .rock {
+  .gesture {
     transform: scale(2);
   }
 }

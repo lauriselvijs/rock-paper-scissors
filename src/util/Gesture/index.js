@@ -1,1 +1,1 @@
-export * as Gesture from "./Gesture";
+export * as Gesture from './Gesture';

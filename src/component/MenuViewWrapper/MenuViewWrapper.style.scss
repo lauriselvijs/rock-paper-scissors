@@ -5,6 +5,18 @@
   align-items: flex-end;
   gap: 170px;
   position: relative;
+
+  animation: menu-view-animation;
+  animation-duration: 1s;
+
+  @keyframes menu-view-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 @media only screen and (max-width: 375px) {

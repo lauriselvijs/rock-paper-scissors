@@ -5,6 +5,34 @@
   align-items: flex-end;
   gap: 160px;
   position: relative;
+
+  animation: play-view-init-animation;
+  animation-duration: 1s;
+
+  @keyframes play-view-init-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.play-view-animation {
+  @extend .play-view;
+  animation: play-view-animation-result;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+
+  @keyframes play-view-animation-result {
+    from {
+      gap: 0px;
+    }
+    to {
+      gap: 160px;
+    }
+  }
 }
 
 @media only screen and (max-width: 375px) {

@@ -1,3 +1,3 @@
-import House from "./House.component";
+import House from './House.component';
 
 export default House;
