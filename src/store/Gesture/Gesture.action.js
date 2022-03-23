@@ -6,11 +6,11 @@ import {
   SET_WINNER,
 } from "./Gesture.action.type";
 
-import { GameScreen } from "../../constant/GameScreen";
+import { Gestures } from "../../constant/Gesture";
 import { Outcome } from "../../constant/Result";
 
 const { DRAW } = Outcome;
-const { PAPER } = GameScreen;
+const { PAPER } = Gestures;
 
 export const setGesture =
   (gesture = PAPER) =>
