@@ -3,7 +3,7 @@ import "./MenuViewWrapper.style.scss";
 import PropTypes from "prop-types";
 
 function MenuViewWrapper({ children }) {
-  return <section className="menu-view">{children}</section>;
+  return <div className="menu-view">{children}</div>;
 }
 
 MenuViewWrapper.propTypes = {
