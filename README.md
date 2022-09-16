@@ -77,6 +77,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Lauris](https://b2cf56-portfolio-react.netlify.app/projects)
+- Website - [Lauris](https://b2cf56-portfolio.netlify.app/projects)
 - Frontend Mentor - [@lauriselvijs](https://www.frontendmentor.io/profile/lauriselvijs)
 - Github - [lauris_elvijs](https://github.com/lauriselvijs)
