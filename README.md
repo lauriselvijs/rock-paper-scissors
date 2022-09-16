@@ -10,6 +10,9 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
     - [Links](#links)
+  - [Installation](#installation)
+    - [Steps to Setup](#steps-to-setup)
+    - [Steps to Run](#steps-to-run)
   - [My process](#my-process)
     - [Built with](#built-with)
     - [Useful resources](#useful-resources)
@@ -44,6 +47,17 @@ Users should be able to:
 
 - Solution URL: [Github](https://github.com/lauriselvijs/rock-paper-scissors)
 - Live Site URL: [Webpage](https://7be390-rock-paper-scissors.netlify.app)
+
+## Installation
+
+### Steps to Setup
+
+1. Have node JS installed.
+2. In the project root directory, run <code>npm install</code>
+
+### Steps to Run
+
+1. In the project root directory, run <code>npm run start</code>
 
 ## My process
 
