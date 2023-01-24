@@ -1,10 +1,10 @@
-import React from 'react';
-import './RulesModal.style.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import closeIcon from '../../asset/images/icon-close.svg';
-import rulesImg from '../../asset/images/image-rules.svg';
-import { HelpModalActions } from '../../store/action';
+import React from "react";
+import "./RulesModal.style.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import closeIcon from "../../asset/images/icon-close.svg";
+import rulesImg from "../../asset/images/image-rules.svg";
+import { HelpModalActions } from "../../store/action";
 
 function RulesModal() {
   const modalOpen = useSelector((state) => state.helpModal.modalOpen);
@@ -13,7 +13,7 @@ function RulesModal() {
   const dispatch = useDispatch();
   const { setModalOpen, setShowAnimation } = bindActionCreators(
     HelpModalActions,
-    dispatch,
+    dispatch
   );
 
   const onCloseBtnClick = () => {
@@ -29,21 +29,19 @@ function RulesModal() {
 
   return (
     <div
-      className={animationEnd ? 'rules-modal-close' : 'rules-modal'}
+      className={animationEnd ? "rules-modal-close" : "rules-modal"}
       onAnimationEnd={onModalAnimationEnd}
-      style={{ display: modalOpen ? 'block' : 'none' }}
+      style={{ display: modalOpen ? "flex" : "none" }}
     >
       <div className="rules-modal-content">
-        <div className="modal-header">
-          <h1 className="rules-title">RULES</h1>
-          <img
-            onClick={onCloseBtnClick}
-            src={closeIcon}
-            alt="Close icon"
-            className="close-icon"
-          />
-        </div>
+        <h1 className="rules-title">RULES</h1>
         <img src={rulesImg} alt="How to play" className="rules-img" />
+        <img
+          onClick={onCloseBtnClick}
+          src={closeIcon}
+          alt="Close icon"
+          className="close-icon"
+        />
       </div>
     </div>
   );

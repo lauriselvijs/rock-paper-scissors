@@ -1,8 +1,12 @@
 @import "./style/main";
 
 body {
+  margin: 0;
+  padding: 0;
+
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: cover;
   background-image: $radial-gradient-bg;
   overflow: hidden;
+  height: 100vh;
 }

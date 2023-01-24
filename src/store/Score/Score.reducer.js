@@ -1,4 +1,4 @@
-import { SET_SCORE } from './Score.action.type';
+import { UPDATE_SCORE, RESET_SCORE } from "./Score.config";
 
 const initialState = {
   score: 0,
@@ -6,10 +6,15 @@ const initialState = {
 
 const ScoreReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_SCORE:
+    case UPDATE_SCORE:
       return {
         ...state,
         score: state.score + action.payload,
+      };
+    case RESET_SCORE:
+      return {
+        ...state,
+        score: 0,
       };
     default:
       return state;
