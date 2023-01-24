@@ -1,4 +1,3 @@
-import React from 'react';
 import './PlayAgainBtn.style.scss';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';

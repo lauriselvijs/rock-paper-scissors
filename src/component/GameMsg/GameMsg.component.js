@@ -1,4 +1,3 @@
-import React from 'react';
 import './GameMsg.style.scss';
 import { useSelector } from 'react-redux';
 import { Gesture } from '../../util/Gesture';

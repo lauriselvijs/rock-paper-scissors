@@ -1,4 +1,3 @@
-import React from 'react';
 import './RulesBtn.style.scss';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';

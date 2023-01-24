@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./House.style.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";

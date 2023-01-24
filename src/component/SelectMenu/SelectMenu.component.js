@@ -1,4 +1,3 @@
-import React from "react";
 import triangle from "../../asset/images/bg-triangle.svg";
 import paper from "../../asset/images/paper.svg";
 import scissors from "../../asset/images/scissors.svg";

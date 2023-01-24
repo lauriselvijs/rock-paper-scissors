@@ -1,4 +1,3 @@
-import React from "react";
 import "./RulesModal.style.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";

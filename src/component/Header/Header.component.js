@@ -1,4 +1,3 @@
-import React from "react";
 import "./Header.style.scss";
 import PropTypes from "prop-types";
 import logo from "../../asset/images/logo.svg";

@@ -1,4 +1,3 @@
-import React from 'react';
 import './Player.style.scss';
 import { useSelector } from 'react-redux';
 import paper from '../../asset/images/paper.svg';

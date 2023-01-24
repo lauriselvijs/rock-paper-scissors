@@ -1,4 +1,3 @@
-import React from "react";
 import "./GameResultWrapper.style.scss";
 import PropTypes from "prop-types";
 

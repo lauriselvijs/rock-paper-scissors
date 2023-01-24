@@ -1,4 +1,3 @@
-import React from "react";
 import "./MenuViewWrapper.style.scss";
 import PropTypes from "prop-types";
 

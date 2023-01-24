@@ -1,4 +1,3 @@
-import React from "react";
 import "./PlayViewWrapper.style.scss";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
