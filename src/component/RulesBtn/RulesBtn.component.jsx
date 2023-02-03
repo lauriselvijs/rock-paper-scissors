@@ -1,18 +1,21 @@
-import "./RulesBtn.style.scss";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import { HelpModalActions } from "../../store/action";
+
+import { helpModalActions } from "../../store/features/HelpModal";
+
+import "./RulesBtn.style.scss";
 
 function RulesBtn() {
   const dispatch = useDispatch();
-  const { setModalOpen, setShowAnimation } = bindActionCreators(
-    HelpModalActions,
+
+  const { modalOpened, animationStarted } = bindActionCreators(
+    helpModalActions,
     dispatch
   );
 
   const onRulesClick = () => {
-    setModalOpen(true);
-    setShowAnimation(false);
+    modalOpened();
+    animationStarted();
   };
 
   return (

@@ -1,6 +1,7 @@
 @use "../../style/components/text";
 @use "../../style/components/gradient";
 @use "../../style/utils/variable";
+@use "../../style/utils/media";
 
 .house {
   display: flex;
@@ -31,17 +32,17 @@
     background-size: contain;
     background-repeat: no-repeat;
     transform: scale(2);
-    background-image: url("../../asset/images/empty-selection.svg");
+    background-image: url("../../asset/icons/empty-selection.svg");
 
     @keyframes item-loop {
       0% {
-        background-image: url("../../asset/images/paper.svg");
+        background-image: url("../../asset/icons/paper.svg");
       }
       33% {
-        background-image: url("../../asset/images/scissors.svg");
+        background-image: url("../../asset/icons/scissors.svg");
       }
       100% {
-        background-image: url("../../asset/images/rock.svg");
+        background-image: url("../../asset/icons/rock.svg");
       }
     }
   }
@@ -49,26 +50,26 @@
   .paper {
     width: 107px;
     height: 110px;
-    background-image: url("../../asset/images/paper.svg");
+    background-image: url("../../asset/icons/paper.svg");
     transform: scale(2);
   }
 
   .scissors {
     width: 107px;
     height: 110px;
-    background-image: url("../../asset/images/scissors.svg");
+    background-image: url("../../asset/icons/scissors.svg");
     transform: scale(2);
   }
 
   .rock {
     width: 107px;
     height: 110px;
-    background-image: url("../../asset/images/rock.svg");
+    background-image: url("../../asset/icons/rock.svg");
     transform: scale(2);
   }
 }
 
-@media (max-width: 1024px) {
+@include media.tablet {
   .house {
     flex-direction: column-reverse;
     padding-top: 90px;

@@ -1,34 +1,40 @@
 import { useEffect } from "react";
-import "./House.style.scss";
+
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Gesture } from "../../util/Gesture";
-import { Gestures } from "../../constant/Gesture";
-import { GestureActions, ScoreActions } from "../../store/action";
-import { Participant } from "../../constant/Participant";
+import { getRandomGesture, getWinner } from "../../util/Game";
+import { SCISSORS, ROCK, PAPER } from "../../constant/Gesture";
+import { gestureActions } from "../../store/features/Gesture";
+import { scoreActions } from "../../store/features/Score";
 
-const { randomGesture, getWinnerRPS } = Gesture;
-const { HOUSE, PLAYER } = Participant;
-const { SCISSORS, ROCK, PAPER } = Gestures;
+import { HOUSE, PLAYER } from "../../constant/Participant";
+import { gestureSliceName } from "../../store/features/Gesture";
+
+import "./House.style.scss";
 
 function House() {
+  const { houseGesture, gesture, winner } = useSelector(
+    (state) => state[gestureSliceName]
+  );
+
   const dispatch = useDispatch();
-  const { setHouseGesture, setGestureAnimationEnd, setWinner } =
-    bindActionCreators(GestureActions, dispatch);
-  const { scoreUpdated } = bindActionCreators(ScoreActions, dispatch);
-  const houseGesture = useSelector((state) => state.gesture.houseGesture);
-  const gesture = useSelector((state) => state.gesture.gesture);
-  const winner = useSelector((state) => state.gesture.winner);
+
+  const { houseGestureUpdated, gestureAnimationEnded, winnerDecided } =
+    bindActionCreators(gestureActions, dispatch);
+  const { scoreIncreasedByOne, scoreDecreasedByOne } = bindActionCreators(
+    scoreActions,
+    dispatch
+  );
 
   useEffect(() => {
-    setWinner(getWinnerRPS(gesture, houseGesture));
-    winner === HOUSE && scoreUpdated(-1);
-    winner === PLAYER && scoreUpdated(1);
+    winnerDecided(getWinner(gesture, houseGesture));
+    winner === HOUSE && scoreDecreasedByOne();
+    winner === PLAYER && scoreIncreasedByOne();
   }, [gesture, houseGesture, winner]);
 
   const onSelectedAnimationEnd = () => {
-    setGestureAnimationEnd(true);
-    setHouseGesture(randomGesture(SCISSORS, ROCK, PAPER));
+    gestureAnimationEnded();
+    houseGestureUpdated(getRandomGesture(SCISSORS, ROCK, PAPER));
   };
 
   return (

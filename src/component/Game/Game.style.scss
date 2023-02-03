@@ -1,3 +1,5 @@
+@use "../../style/utils/media";
+
 .game {
   display: flex;
   justify-content: center;
@@ -66,7 +68,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@include media.tablet {
   .menu-view {
     transform: scale(0.7, 0.7);
   }

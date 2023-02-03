@@ -1,5 +1,6 @@
 @use "../../style/components/text";
 @use "../../style/components/gradient";
+@use "../../style/utils/media";
 
 .player {
   display: flex;
@@ -23,7 +24,7 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@include media.tablet {
   .player {
     flex-direction: column-reverse;
     padding-top: 90px;

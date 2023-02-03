@@ -1,1 +1,1 @@
-export * as Participant from './Participant.const';
+export * from "./Participant.const";

@@ -9,12 +9,14 @@ import GameMsg from "../GameMsg";
 import PlayAgainBtn from "../PlayAgainBtn";
 import RulesModal from "../RulesModal";
 import { GAME_SCREEN, MENU_SCREEN } from "../../constant/GameScreen";
+import { gestureSliceName } from "../../store/features/Gesture";
 
 import "./Game.style.scss";
 
 function Game() {
-  const gameScreen = useSelector((state) => state.gesture.gameScreen);
-  const showAnimation = useSelector((state) => state.gesture.showAnimation);
+  const { gameScreen, showAnimation } = useSelector(
+    (state) => state[gestureSliceName]
+  );
 
   const renderGameEnded = useMemo(
     () =>

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
@@ -10,9 +11,8 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-scripts": "5.0.0",
-    "redux": "^4.1.2",
+    "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.4.1",
     "sass": "^1.57.1"
   },
   "scripts": {

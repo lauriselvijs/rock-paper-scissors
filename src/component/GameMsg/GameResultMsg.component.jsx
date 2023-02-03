@@ -1,17 +1,17 @@
 import { useSelector } from "react-redux";
 
-import { Gesture } from "../../util/Gesture";
+import { checkIfPlayerWins } from "../../util/Game";
+import { gestureSliceName } from "../../store/features/Gesture";
 
 import "./GameResultMsg.style.scss";
 
-const { checkIfPlayerWinRPS } = Gesture;
-
 function GameResultMsg() {
-  const houseGesture = useSelector((state) => state.gesture.houseGesture);
-  const gesture = useSelector((state) => state.gesture.gesture);
+  const { houseGesture, gesture } = useSelector(
+    (state) => state[gestureSliceName]
+  );
 
   return (
-    <div className="game-msg">{checkIfPlayerWinRPS(gesture, houseGesture)}</div>
+    <div className="game-msg">{checkIfPlayerWins(gesture, houseGesture)}</div>
   );
 }
 

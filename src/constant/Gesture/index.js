@@ -1,1 +1,1 @@
-export * as Gestures from './Gesture.const';
+export * from "./Gesture.const";

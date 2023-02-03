@@ -1,17 +1,14 @@
-import './Player.style.scss';
-import { useSelector } from 'react-redux';
-import paper from '../../asset/images/paper.svg';
-import scissors from '../../asset/images/scissors.svg';
-import rock from '../../asset/images/rock.svg';
-import { Gestures } from '../../constant/Gesture';
-import { Participant } from '../../constant/Participant';
-
-const { SCISSORS, ROCK, PAPER } = Gestures;
-const { PLAYER } = Participant;
+import "./Player.style.scss";
+import { useSelector } from "react-redux";
+import paper from "../../asset/icons/paper.svg";
+import scissors from "../../asset/icons/scissors.svg";
+import rock from "../../asset/icons/rock.svg";
+import { SCISSORS, ROCK, PAPER } from "../../constant/Gesture";
+import { PLAYER } from "../../constant/Participant";
+import { gestureSliceName } from "../../store/features/Gesture";
 
 function Player() {
-  const gesture = useSelector((state) => state.gesture.gesture);
-  const winner = useSelector((state) => state.gesture.winner);
+  const { gesture, winner } = useSelector((state) => state[gestureSliceName]);
 
   return (
     <div className="player">

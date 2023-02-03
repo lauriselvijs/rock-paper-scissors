@@ -2,14 +2,17 @@ import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { ScoreActions } from "../../store/action";
-import logo from "../../asset/images/logo.svg";
+import logo from "../../asset/icons/logo.svg";
 
 import "./Score.style.scss";
+import { scoreActions, scoreSliceName } from "../../store/features/Score";
 
 function Score() {
-  const score = useSelector((state) => state.score.score);
+  const { score } = useSelector((state) => state[scoreSliceName]);
+
   const dispatch = useDispatch();
-  const { scoreReset } = bindActionCreators(ScoreActions, dispatch);
+
+  const { scoreReset } = bindActionCreators(scoreActions, dispatch);
 
   const onScoreClick = () => {
     scoreReset();
