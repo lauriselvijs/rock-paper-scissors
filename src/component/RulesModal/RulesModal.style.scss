@@ -1,4 +1,4 @@
-@import "../../style/main";
+@use "../../style/utils/variable";
 
 .rules-modal {
   position: fixed;
@@ -28,7 +28,7 @@
 
   &-content {
     align-items: center;
-    background-color: $white;
+    background-color: variable.$white;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -41,10 +41,10 @@
     height: 100vh;
 
     .rules-title {
-      font-family: $font-family;
+      font-family: variable.$font-family;
       font-size: 28px;
-      font-weight: $font-weight-bold;
-      color: $dark-text;
+      font-weight: variable.$font-weight-bold;
+      color: variable.$dark-text;
     }
 
     .rules-img {
@@ -81,7 +81,7 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
-    background-color: $white;
+    background-color: variable.$white;
     overflow: hidden;
 
     @keyframes module-mobile-animation-start {

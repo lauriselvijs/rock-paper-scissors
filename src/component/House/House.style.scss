@@ -1,4 +1,6 @@
-@import "../../style/main";
+@use "../../style/components/text";
+@use "../../style/components/gradient";
+@use "../../style/utils/variable";
 
 .house {
   display: flex;
@@ -8,11 +10,11 @@
   position: relative;
 
   &-picked {
-    @include player-name;
+    @include text.player-name;
   }
 
   .winner-gradient-house {
-    @include winner-gradient;
+    @include gradient.winner-gradient;
     top: -60px;
     left: -200px;
   }
@@ -66,7 +68,7 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .house {
     flex-direction: column-reverse;
     padding-top: 90px;

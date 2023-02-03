@@ -1,7 +1,9 @@
+@use "../utils/variable";
+
 @mixin player-name {
-  color: $white;
+  color: variable.$white;
   font-size: 14px;
-  font-weight: $font-weight-bold;
+  font-weight: variable.$font-weight-bold;
   letter-spacing: 1px;
   padding-top: 50px;
   padding-bottom: 90px;

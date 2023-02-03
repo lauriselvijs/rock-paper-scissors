@@ -1,2 +1,4 @@
-@import "./abstract/abstract";
-@import "./block/block";
+@use "./utils";
+@use "./components";
+@use "./base";
+@use "./layout";

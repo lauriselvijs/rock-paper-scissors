@@ -1,4 +1,5 @@
-@import "../../style/main";
+@use "../../style/components/text";
+@use "../../style/components/gradient";
 
 .player {
   display: flex;
@@ -8,11 +9,11 @@
   position: relative;
 
   .you-picked {
-    @include player-name;
+    @include text.player-name;
   }
 
   .winner-gradient {
-    @include winner-gradient;
+    @include gradient.winner-gradient;
     top: -60px;
     left: -215px;
   }

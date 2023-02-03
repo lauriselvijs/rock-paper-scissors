@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { ScoreActions } from "../../store/action";
+import logo from "../../asset/images/logo.svg";
 
 import "./Score.style.scss";
 
@@ -15,14 +16,17 @@ function Score() {
   };
 
   return (
-    <div
-      aria-label="Click to reset score"
-      className="score"
-      title="Click to reset"
-      onClick={onScoreClick}
-    >
-      <div className="score-text">SCORE</div>
-      <div className="score-result">{score}</div>
+    <div className="score">
+      <img className="game-logo" src={logo} alt="Logo" />
+      <button
+        aria-label="Click to reset score"
+        className="score-btn"
+        title="Click to reset"
+        onClick={onScoreClick}
+      >
+        <div className="score-btn-text">SCORE</div>
+        <div className="score-btn-result">{score}</div>
+      </button>
     </div>
   );
 }

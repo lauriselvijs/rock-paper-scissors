@@ -1,14 +1,14 @@
-@import "../../style/main";
+@use "../../style/utils/variable";
 
 .play-again-btn {
   width: 140px;
   height: 35px;
-  background-color: $white;
+  background-color: variable.$white;
   border: none;
   border-radius: 5px;
-  font-family: $font-family;
-  font-weight: $font-weight-semi-bold;
-  color: $play-btn-color;
+  font-family: variable.$font-family;
+  font-weight: variable.$font-weight-semi-bold;
+  color: variable.$play-btn-color;
   font-size: 12px;
 
   &:hover {

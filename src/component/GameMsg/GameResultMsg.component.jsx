@@ -1,10 +1,12 @@
-import './GameMsg.style.scss';
-import { useSelector } from 'react-redux';
-import { Gesture } from '../../util/Gesture';
+import { useSelector } from "react-redux";
+
+import { Gesture } from "../../util/Gesture";
+
+import "./GameResultMsg.style.scss";
 
 const { checkIfPlayerWinRPS } = Gesture;
 
-function GameMsg() {
+function GameResultMsg() {
   const houseGesture = useSelector((state) => state.gesture.houseGesture);
   const gesture = useSelector((state) => state.gesture.gesture);
 
@@ -13,4 +15,4 @@ function GameMsg() {
   );
 }
 
-export default GameMsg;
+export default GameResultMsg;

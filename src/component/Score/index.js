@@ -1,3 +1,1 @@
-import Score from './Score.component';
-
-export default Score;
+export { default } from "./Score.component";

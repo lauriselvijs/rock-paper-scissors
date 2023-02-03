@@ -1,0 +1,10 @@
+@use "../utils/variable";
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-image: variable.$radial-gradient-bg;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}

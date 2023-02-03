@@ -1,26 +1,41 @@
-@import "../../style/main";
+@use "../../style/utils/variable";
 
 .score {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 70px;
-  width: 100px;
-  background-color: $white;
-  border-radius: 10px 10px;
+  border-radius: 10px;
+  display: flex;
+  margin-top: 20px;
+  min-height: 80px;
+  outline: variable.$header-outline solid 2px;
+  padding: 10px 20px;
+  justify-content: space-between;
+  gap: 20vw;
 
-  &-text {
-    color: $score-text;
-    font-size: 10px;
-    font-weight: $font-weight-semi-bold;
+  .game-logo {
+    height: 100%;
   }
 
-  &-result {
-    font-family: $font-family;
-    font-weight: $font-weight-bold;
-    font-size: 42px;
-    color: $dark-text;
-    line-height: 85%;
+  .score-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    background-color: variable.$white;
+    border-radius: 10px 10px;
+
+    &-text {
+      color: variable.$score-text;
+      font-size: 10px;
+      font-weight: variable.$font-weight-semi-bold;
+    }
+
+    &-result {
+      font-family: variable.$font-family;
+      font-weight: variable.$font-weight-bold;
+      font-size: 42px;
+      color: variable.$dark-text;
+      line-height: 85%;
+    }
   }
 }

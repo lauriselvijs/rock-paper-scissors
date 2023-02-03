@@ -1,3 +1,1 @@
-import RulesBtn from './RulesBtn.component';
-
-export default RulesBtn;
+export { default } from "./RulesBtn.component";

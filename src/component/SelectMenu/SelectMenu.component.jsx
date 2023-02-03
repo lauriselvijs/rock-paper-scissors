@@ -7,10 +7,9 @@ import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { GestureActions } from "../../store/action";
 import { Gestures } from "../../constant/Gesture";
-import { GameScreen } from "../../constant/GameScreen";
+import { GAME_SCREEN } from "../../constant/GameScreen";
 
 const { SCISSORS, ROCK, PAPER } = Gestures;
-const { GAME_SCREEN } = GameScreen;
 
 function SelectMenu() {
   const dispatch = useDispatch();

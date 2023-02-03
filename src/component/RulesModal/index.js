@@ -1,3 +1,1 @@
-import RulesModal from './RulesModal.component';
-
-export default RulesModal;
+export { default } from "./RulesModal.component";

@@ -1,1 +1,1 @@
-export * as GameScreen from './GameScreen.const';
+export * from "./GameScreen.const";

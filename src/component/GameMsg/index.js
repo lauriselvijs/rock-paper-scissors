@@ -1,3 +1,1 @@
-import GameMsg from './GameMsg.component';
-
-export default GameMsg;
+export { default } from "./GameResultMsg.component";

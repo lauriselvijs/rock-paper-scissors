@@ -1,13 +1,13 @@
-import './RulesBtn.style.scss';
-import { useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { HelpModalActions } from '../../store/action';
+import "./RulesBtn.style.scss";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { HelpModalActions } from "../../store/action";
 
 function RulesBtn() {
   const dispatch = useDispatch();
   const { setModalOpen, setShowAnimation } = bindActionCreators(
     HelpModalActions,
-    dispatch,
+    dispatch
   );
 
   const onRulesClick = () => {
@@ -16,7 +16,7 @@ function RulesBtn() {
   };
 
   return (
-    <button onClick={onRulesClick} className="rules">
+    <button onClick={onRulesClick} className="rules-btn">
       RULES
     </button>
   );

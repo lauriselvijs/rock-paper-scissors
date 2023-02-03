@@ -1,8 +1,9 @@
-import "./Footer.style.scss";
+import "./Author.style.scss";
 
-const Footer = () => {
+function Author() {
   return (
-    <footer className="attribution">
+    <div className="author">
+      {" "}
       Challenge by{" "}
       <a
         href="https://www.frontendmentor.io?ref=challenge"
@@ -12,8 +13,8 @@ const Footer = () => {
         Frontend Mentor
       </a>
       . Coded by <a href="https://github.com/lauriselvijs/">Lauris</a>.
-    </footer>
+    </div>
   );
-};
+}
 
-export default Footer;
+export default Author;

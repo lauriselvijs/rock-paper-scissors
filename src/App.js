@@ -1,25 +1,20 @@
-import "./App.scss";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Footer from "./component/Footer";
-import Root from "./route/Root";
-import RulesModal from "./component/RulesModal/RulesModal.component";
+import Score from "./component/Score";
+import Game from "./component/Game";
+import Author from "./component/Author/Author.component";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Root />
-              <RulesModal />
-            </>
-          }
-        />
-      </Routes>
-      <Footer />
-    </Router>
+    <>
+      <header>
+        <Score />
+      </header>
+      <main>
+        <Game />
+      </main>
+      <footer>
+        <Author />
+      </footer>
+    </>
   );
 }
 

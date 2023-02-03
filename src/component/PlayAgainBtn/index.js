@@ -1,3 +1,1 @@
-import PlayAgainBtn from './PlayAgainBtn.component';
-
-export default PlayAgainBtn;
+export { default } from "./PlayAgainBtn.component.jsx";
