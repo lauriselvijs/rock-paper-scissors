@@ -2,8 +2,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 
-import { gestureReducer, gestureSliceName } from "../features/Gesture";
-import { scoreReducer, scoreSliceName } from "../features/Score";
+import { gameReducer, gameSliceName } from "../features/Gesture";
 import { helpModalSliceName, helpModalReducer } from "../features/HelpModal";
 
 const scoreReducerConfig = {
@@ -12,9 +11,8 @@ const scoreReducerConfig = {
 };
 
 const reducers = {
-  [gestureSliceName]: gestureReducer,
+  [gameSliceName]: persistReducer(scoreReducerConfig, gameReducer),
   [helpModalSliceName]: helpModalReducer,
-  [scoreSliceName]: persistReducer(scoreReducerConfig, scoreReducer),
 };
 
 const rootReducer = combineReducers(reducers);

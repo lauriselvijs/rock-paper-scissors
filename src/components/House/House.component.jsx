@@ -1,14 +1,10 @@
 import { useEffect } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
-import { getRandomGesture, getWinner } from "../../util/Game";
-import { SCISSORS, ROCK, PAPER } from "../../constant/Gesture";
-import { gestureActions } from "../../store/features/Gesture";
-import { scoreActions } from "../../store/features/Score";
 
+import { gameActions } from "../../store/features/Game";
 import { HOUSE, PLAYER } from "../../constant/Participant";
-import { gestureSliceName } from "../../store/features/Gesture";
+import { gestureSliceName } from "../../store/features/Game";
 
 import "./House.style.scss";
 
@@ -18,23 +14,21 @@ function House() {
   );
 
   const dispatch = useDispatch();
-
-  const { houseGestureUpdated, gestureAnimationEnded, winnerDecided } =
-    bindActionCreators(gestureActions, dispatch);
-  const { scoreIncreasedByOne, scoreDecreasedByOne } = bindActionCreators(
-    scoreActions,
-    dispatch
-  );
+  const {
+    gestureAnimationEnded,
+    winnerDecided,
+    scoreIncreasedByOne,
+    scoreDecreasedByOne,
+  } = bindActionCreators(gameActions, dispatch);
 
   useEffect(() => {
-    winnerDecided(getWinner(gesture, houseGesture));
+    winnerDecided(gesture, houseGesture);
     winner === HOUSE && scoreDecreasedByOne();
     winner === PLAYER && scoreIncreasedByOne();
   }, [gesture, houseGesture, winner]);
 
   const onSelectedAnimationEnd = () => {
     gestureAnimationEnded();
-    houseGestureUpdated(getRandomGesture(SCISSORS, ROCK, PAPER));
   };
 
   return (

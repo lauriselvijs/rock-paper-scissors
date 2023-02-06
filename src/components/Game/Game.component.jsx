@@ -8,7 +8,7 @@ import House from "../House";
 import GameMsg from "../GameMsg";
 import PlayAgainBtn from "../PlayAgainBtn";
 import RulesModal from "../RulesModal";
-import { GAME_SCREEN, MENU_SCREEN } from "../../constant/GameScreen";
+import { MAIN_SCREEN, MENU_SCREEN } from "../../constant/GameScreen";
 import { gestureSliceName } from "../../store/features/Gesture";
 
 import "./Game.style.scss";
@@ -38,7 +38,7 @@ function Game() {
       );
     }
 
-    if (gameScreen === GAME_SCREEN) {
+    if (gameScreen === MAIN_SCREEN) {
       return (
         <div className={showAnimation ? "play-view-animation" : "play-view"}>
           <Player />

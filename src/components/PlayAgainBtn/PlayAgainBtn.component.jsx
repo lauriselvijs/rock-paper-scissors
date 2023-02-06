@@ -1,25 +1,19 @@
 import { useDispatch } from "react-redux";
-
 import { bindActionCreators } from "redux";
-import { MENU_SCREEN } from "../../constant/GameScreen";
-import { gestureActions } from "../../store/features/Gesture";
+
+import { gameActions } from "../../store/features/Game";
 
 import "./PlayAgainBtn.style.scss";
 
 function PlayAgainBtn() {
   const dispatch = useDispatch();
 
-  const {
-    screenUpdated,
-    gestureAnimationEnded,
-    houseGestureReset,
-    winnerReset,
-  } = bindActionCreators(gestureActions, dispatch);
+  const { gestureAnimationEnded, screenUpdatedToMain, winnerReset } =
+    bindActionCreators(gameActions, dispatch);
 
   const onPlayAgainBtnClick = () => {
-    screenUpdated(MENU_SCREEN);
+    screenUpdatedToMain();
     gestureAnimationEnded();
-    houseGestureReset();
     winnerReset();
   };
 

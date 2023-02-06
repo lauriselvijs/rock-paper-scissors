@@ -5,31 +5,32 @@ import rock from "../../asset/icons/rock.svg";
 import "./SelectMenu.style.scss";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import { SCISSORS, ROCK, PAPER } from "../../constant/Gesture";
-import { GAME_SCREEN } from "../../constant/GameScreen";
-import { gestureActions } from "../../store/features/Gesture";
+import { MAIN_SCREEN } from "../../constant/GameScreen";
+import { gameActions } from "../../store/features/Game";
 
 function SelectMenu() {
   const dispatch = useDispatch();
 
-  const { screenUpdated, gestureUpdated } = bindActionCreators(
-    gestureActions,
-    dispatch
-  );
+  const {
+    screenUpdatedToMain,
+    gestureUpdatedToPaper,
+    gestureUpdatedToRock,
+    gestureUpdatedToScissors,
+  } = bindActionCreators(gameActions, dispatch);
 
   const onPaperClick = () => {
-    screenUpdated(GAME_SCREEN);
-    gestureUpdated(PAPER);
+    screenUpdatedToMain();
+    gestureUpdatedToPaper();
   };
 
   const onScissorsClick = () => {
-    screenUpdated(GAME_SCREEN);
-    gestureUpdated(SCISSORS);
+    screenUpdatedToMain();
+    gestureUpdatedToScissors();
   };
 
   const onRockClick = () => {
-    screenUpdated(GAME_SCREEN);
-    gestureUpdated(ROCK);
+    screenUpdatedToMain();
+    gestureUpdatedToRock();
   };
 
   return (
