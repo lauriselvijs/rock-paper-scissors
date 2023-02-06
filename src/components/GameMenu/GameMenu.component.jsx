@@ -2,10 +2,9 @@ import triangle from "../../asset/icons/bg-triangle.svg";
 import paper from "../../asset/icons/paper.svg";
 import scissors from "../../asset/icons/scissors.svg";
 import rock from "../../asset/icons/rock.svg";
-import "./SelectMenu.style.scss";
+import "./GameMenu.style.scss";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import { MAIN_SCREEN } from "../../constant/GameScreen";
 import { gameActions } from "../../store/features/Game";
 
 function SelectMenu() {

@@ -1,20 +1,24 @@
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
+import { useEffect, useState } from "react";
 
 import logo from "../../asset/icons/logo.svg";
+import { HOUSE, PLAYER } from "../../constant/Participant";
 
 import "./Score.style.scss";
-import { gameActions, gameSliceName } from "../../store/features/Game";
 
-function Score() {
-  const { score } = useSelector((state) => state[gameSliceName]);
+function Score({ winner }) {
+  const [score, setScore] = useState(0);
 
-  const dispatch = useDispatch();
-
-  const { scoreReset } = bindActionCreators(gameActions, dispatch);
+  useEffect(() => {
+    if (winner === PLAYER) {
+      setScore((score) => score + 1);
+    }
+    if (winner === HOUSE && score > 0) {
+      setScore((score) => score - 1);
+    }
+  }, [winner]);
 
   const onScoreClick = () => {
-    scoreReset();
+    setScore(0);
   };
 
   return (

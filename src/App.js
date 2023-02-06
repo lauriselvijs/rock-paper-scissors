@@ -1,13 +1,10 @@
-import Score from "./component/Score";
-import Game from "./component/Game";
-import Author from "./component/Author/Author.component";
+import Score from "./components/Score";
+import Game from "./components/Game";
+import Author from "./components/Author";
 
 function App() {
   return (
     <>
-      <header>
-        <Score />
-      </header>
       <main>
         <Game />
       </main>

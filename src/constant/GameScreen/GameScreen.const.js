@@ -1,2 +1,2 @@
-export const MAIN_SCREEN = 1;
-export const MENU_SCREEN = 0;
+export const MAIN_SCREEN = "MAIN_SCREEN";
+export const MENU_SCREEN = "MENU_SCREEN";

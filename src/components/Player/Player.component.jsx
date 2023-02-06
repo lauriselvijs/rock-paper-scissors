@@ -5,12 +5,10 @@ import scissors from "../../asset/icons/scissors.svg";
 import rock from "../../asset/icons/rock.svg";
 import { SCISSORS, ROCK, PAPER } from "../../constant/Gesture";
 import { PLAYER } from "../../constant/Participant";
-import { gameSliceName } from "../../store/features/Gesture";
+import { gameSliceName } from "../../store/features/Game";
 
-function Player() {
-  const { playerGesture, winner } = useSelector(
-    (state) => state[gameSliceName]
-  );
+function Player({ winner }) {
+  const { playerGesture } = useSelector((state) => state[gameSliceName]);
 
   return (
     <div className="player">

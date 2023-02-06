@@ -4,36 +4,23 @@ import { bindActionCreators } from "redux";
 import closeIcon from "../../asset/icons/icon-close.svg";
 import rulesImg from "../../asset/icons/image-rules.svg";
 import {
-  helpModalActions,
-  helpModalSliceName,
-} from "../../store/features/HelpModal";
+  rulesModalActions,
+  rulesModalSliceName,
+} from "../../store/features/RulesModal";
 
 function RulesModal() {
-  const { modalOpen, showAnimation } = useSelector(
-    (state) => state[helpModalSliceName]
-  );
+  const { modalOpen } = useSelector((state) => state[rulesModalSliceName]);
   const dispatch = useDispatch();
 
-  const { modalClosed, animationStarted, animationEnded } = bindActionCreators(
-    helpModalActions,
-    dispatch
-  );
+  const { modalClosed } = bindActionCreators(rulesModalActions, dispatch);
 
   const onCloseBtnClick = () => {
-    animationStarted();
-  };
-
-  const onModalAnimationEnd = () => {
-    if (showAnimation) {
-      animationEnded();
-      modalClosed();
-    }
+    modalClosed();
   };
 
   return (
     <div
-      className={showAnimation ? "rules-modal-close" : "rules-modal"}
-      onAnimationEnd={onModalAnimationEnd}
+      className="rules-modal"
       style={{ display: modalOpen ? "flex" : "none" }}
     >
       <div className="rules-modal-content">

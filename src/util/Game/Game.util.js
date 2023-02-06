@@ -1,22 +1,18 @@
-import { SCISSORS, PAPER, ROCK } from "../../constant/Gesture";
-import { GameMsg } from "../../constant/Result";
-import { HOUSE, PLAYER } from "../../constant/Participant";
+import { PAPER, ROCK, SCISSORS } from "../../constant/Gesture";
+import { PLAYER, HOUSE } from "../../constant/Participant";
+import { wins } from "../../constant/Rules";
 
-const { YOU_WIN, YOU_LOOSE, DRAW } = GameMsg;
+export const getRandomGesture = () => {
+  const gestures = [PAPER, ROCK, SCISSORS];
+  const gesture = gestures[Math.floor(Math.random() * gestures.length)];
 
-const wins = {
-  [ROCK]: SCISSORS,
-  [SCISSORS]: PAPER,
-  [PAPER]: ROCK,
+  return gesture;
 };
 
-export const checkIfPlayerWins = (playerGesture, houseGesture) => {
-  if (playerGesture === houseGesture) {
-    return DRAW;
-  }
-  return wins[playerGesture] === houseGesture ? YOU_WIN : YOU_LOOSE;
-};
+export const getWinner = (playerGesture) => {
+  const houseGesture = getRandomGesture();
 
-export const getWinner = (playerGesture, homeGesture) => {
-  return wins[playerGesture] === homeGesture ? HOUSE : PLAYER;
+  console.log("house", houseGesture, "player", playerGesture);
+
+  return wins[playerGesture] === houseGesture ? HOUSE : PLAYER;
 };
