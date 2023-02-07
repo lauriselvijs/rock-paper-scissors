@@ -12,42 +12,42 @@ import { MAIN_SCREEN, MENU_SCREEN } from "../../constant/GameScreen";
 import { gameSliceName } from "../../store/features/Game";
 import Score from "../Score";
 
-import "./Game.style.scss";
+import styles from "./Game.style.module.scss";
 
-function Game() {
+const Game = () => {
   const { gameScreen } = useSelector((state) => state[gameSliceName]);
 
   const renderGameScreen = useMemo(() => {
     if (gameScreen === MENU_SCREEN) {
-      return (
-        <div className="menu-view">
-          <GameMenu />
-        </div>
-      );
+      return <GameMenu />;
     }
 
     if (gameScreen === MAIN_SCREEN) {
       return (
         <>
-          <div className="play-view">
-            <Player />
-            <House />
+          <div className={styles.mainScreen}>
+            <div className={styles.players}>
+              <Player />
+              <House />
+            </div>
+            <div className={styles.controls}>
+              <GameResultMsg />
+              <PlayAgainBtn />
+            </div>
           </div>
-          <GameResultMsg />
-          <PlayAgainBtn />
         </>
       );
     }
   }, [gameScreen]);
 
   return (
-    <div className="game">
+    <div className={styles.game}>
       <Score />
-      <RulesModalBtn />
-      <RulesModal />
+      {/* <RulesModalBtn /> */}
+      {/* <RulesModal /> */}
       {renderGameScreen}
     </div>
   );
-}
+};
 
 export default Game;

@@ -4,20 +4,20 @@ import { useSelector } from "react-redux";
 import logo from "../../asset/icons/logo.svg";
 import { gameSliceName } from "../../store/features/Game";
 
-import "./Score.style.scss";
+import styles from "./Score.style.module.scss";
 
-function Score() {
+const Score = () => {
   const { score } = useSelector((state) => state[gameSliceName]);
 
   return (
-    <div className="score">
-      <img className="game-logo" src={logo} alt="Logo" />
-      <div className="points">
-        <div className="points-text">SCORE</div>
-        <div className="points-result">{score}</div>
+    <div className={styles.score}>
+      <img className={styles.gameLogo} src={logo} alt="Logo" />
+      <div className={styles.points}>
+        <div className={styles.pointsText}>SCORE</div>
+        <div className={styles.pointsResult}>{score}</div>
       </div>
     </div>
   );
-}
+};
 
 export default Score;

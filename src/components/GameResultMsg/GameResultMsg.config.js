@@ -1,9 +1,9 @@
 import { HOUSE, PLAYER, DRAW } from "../../constant/Participant";
 
 export const MESSAGES = {
-  [DRAW]: "DRAW",
-  [HOUSE]: "LOOSE",
-  [PLAYER]: "WIN",
+  [DRAW]: "Draw",
+  [HOUSE]: "You lost",
+  [PLAYER]: "You win",
 };
 
 export const getWinnerMsg = (winner) => {

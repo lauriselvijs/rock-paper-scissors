@@ -1,8 +1,8 @@
-import "./Author.style.scss";
+import styles from "./Author.style.module.scss";
 
 function Author() {
   return (
-    <div className="author">
+    <div className={styles.author}>
       {" "}
       Challenge by{" "}
       <a

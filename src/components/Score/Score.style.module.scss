@@ -1,40 +1,43 @@
 @use "../../style/utils/variable";
+@use "../../style/utils/media";
 
 .score {
   align-items: center;
   border-radius: 10px;
   display: flex;
-  margin-top: 20px;
-  min-height: 80px;
-  outline: variable.$header-outline solid 2px;
-  padding: 10px 20px;
+  gap: 20px;
   justify-content: space-between;
-  gap: 20vw;
+  max-width: 500px;
+  outline: variable.$header-outline solid 2px;
+  overflow: auto;
+  padding: 10px 20px;
+  width: 70%;
 
-  .game-logo {
-    height: 100%;
+  .gameLogo {
+    height: auto;
+    max-width: 100%;
   }
 
   .points {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 25px 25px;
     background-color: variable.$white;
     border-radius: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 26px;
 
-    &-text {
+    &Text {
       color: variable.$score-text;
       font-size: 10px;
       font-weight: variable.$font-weight-semi-bold;
     }
 
-    &-result {
-      font-family: variable.$font-family;
-      font-weight: variable.$font-weight-bold;
-      font-size: 42px;
+    &Result {
       color: variable.$dark-text;
+      font-family: variable.$font-family;
+      font-size: 42px;
+      font-weight: variable.$font-weight-bold;
       line-height: 85%;
     }
   }

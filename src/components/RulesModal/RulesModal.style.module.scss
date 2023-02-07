@@ -76,7 +76,7 @@
   }
 }
 
-@include media.tablet {
+@include media.mobile {
   .rules-modal {
     animation-name: module-mobile-animation-start;
     animation-duration: 0.5s;

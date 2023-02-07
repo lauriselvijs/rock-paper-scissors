@@ -1,4 +1,4 @@
-import "./Player.style.scss";
+import styles from "./Player.style.module.scss";
 import { useSelector } from "react-redux";
 import paper from "../../asset/icons/paper.svg";
 import scissors from "../../asset/icons/scissors.svg";
@@ -13,18 +13,18 @@ function Player() {
   );
 
   return (
-    <div className="player">
-      <div className="you-picked">YOU PICKED</div>
+    <div className={styles.player}>
+      <div className={styles.youPicked}>YOU PICKED</div>
       {playerGesture === PAPER && (
-        <img src={paper} alt="Paper" className="gesture" />
+        <img src={paper} alt="Paper" className={styles.gesture} />
       )}
       {playerGesture === SCISSORS && (
-        <img src={scissors} alt="Scissors" className="gesture" />
+        <img src={scissors} alt="Scissors" className={styles.gesture} />
       )}
       {playerGesture === ROCK && (
-        <img src={rock} alt="Rock" className="gesture" />
+        <img src={rock} alt="Rock" className={styles.gesture} />
       )}
-      {winner === PLAYER && <div className="winner-gradient" />}
+      {/* {winner === PLAYER && <div className="winner-gradient" />} */}
     </div>
   );
 }

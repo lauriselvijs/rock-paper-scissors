@@ -1,0 +1,29 @@
+@use "../../style/utils/media";
+
+.game {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  justify-content: space-evenly;
+
+  .mainScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20vh;
+  }
+
+  .players {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20vw;
+  }
+}
+
+@include media.mobile {
+}

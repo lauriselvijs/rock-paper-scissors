@@ -1,4 +1,4 @@
-import "./RulesModal.style.scss";
+import styles from "./RulesModal.style.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import closeIcon from "../../asset/icons/icon-close.svg";

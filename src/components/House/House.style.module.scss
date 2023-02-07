@@ -1,0 +1,24 @@
+@use "../../style/components/text";
+@use "../../style/components/gradient";
+@use "../../style/utils/media";
+
+.house {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .pickedTitle {
+    @include text.player-name;
+  }
+
+  .gesture {
+    transform: scale(2);
+  }
+}
+
+@include media.mobile {
+  .house .gesture {
+    transform: scale(1.5);
+  }
+}

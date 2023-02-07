@@ -3,9 +3,9 @@ import { bindActionCreators } from "redux";
 
 import { rulesModalActions } from "../../store/features/RulesModal";
 
-import "./RulesModalBtn.style.scss";
+import styles from "./RulesModalBtn.style.module.scss";
 
-function RulesModalBtn() {
+const RulesModalBtn = () => {
   const dispatch = useDispatch();
 
   const { modalOpened } = bindActionCreators(rulesModalActions, dispatch);
@@ -15,10 +15,10 @@ function RulesModalBtn() {
   };
 
   return (
-    <button onClick={onRulesClick} className="rules-btn">
+    <button onClick={onRulesClick} className={styles.rulesBtn}>
       RULES
     </button>
   );
-}
+};
 
 export default RulesModalBtn;

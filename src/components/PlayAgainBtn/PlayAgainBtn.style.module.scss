@@ -1,0 +1,18 @@
+@use "../../style/utils/variable";
+
+.playAgainBtn {
+  background-color: variable.$white;
+  border-radius: 5px;
+  border: none;
+  color: variable.$play-btn-color;
+  font-family: variable.$font-family;
+  font-size: 12px;
+  font-weight: variable.$font-weight-semi-bold;
+  min-height: 35px;
+  transition: transform 0.2s linear;
+  width: 100%;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

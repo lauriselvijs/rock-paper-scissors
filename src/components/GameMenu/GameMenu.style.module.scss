@@ -1,0 +1,51 @@
+@use "../../style/utils/media";
+
+@mixin gesture {
+  position: absolute;
+  transition: transform 0.2s linear;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @include media.mobile {
+    & {
+      transform: scale(0.8);
+    }
+  }
+}
+
+.gameMenu {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  max-width: 360px;
+  min-width: 260px;
+  position: relative;
+  width: 60%;
+
+  .triangle {
+    height: auto;
+    width: inherit;
+  }
+
+  .paper {
+    @include gesture;
+
+    left: 0;
+    top: -55px;
+  }
+
+  .rock {
+    @include gesture;
+
+    right: 0;
+    top: -55px;
+  }
+
+  .scissors {
+    @include gesture;
+
+    bottom: -55px;
+  }
+}

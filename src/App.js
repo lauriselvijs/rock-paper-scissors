@@ -1,4 +1,3 @@
-import Score from "./components/Score";
 import Game from "./components/Game";
 import Author from "./components/Author";
 

@@ -1,19 +1,16 @@
-import { useSelector } from "react-redux";
-import { HOUSE } from "../../constant/Participant";
-import { gameSliceName } from "../../store/features/Game";
+import styles from "./House.style.module.scss";
+import { useGestureImage } from "./House.hook";
 
-import "./House.style.scss";
-
-function House() {
-  const { winner, houseGesture } = useSelector((state) => state[gameSliceName]);
+const House = () => {
+  const { src, houseGesture } = useGestureImage();
 
   return (
-    <div className="house">
-      <div className="house-picked">HOUSE PICKED</div>
-      <div className={houseGesture.toLowerCase()} />
-      {winner === HOUSE && <div className="winner-gradient-house" />}
+    <div className={styles.house}>
+      <div className={styles.pickedTitle}>HOUSE PICKED</div>
+      <img src={src} alt={houseGesture} className={styles.gesture} />
+      {/* {winner === HOUSE && <div className="winner-gradient-house" />} */}
     </div>
   );
-}
+};
 
 export default House;

@@ -3,22 +3,22 @@ import { bindActionCreators } from "redux";
 
 import { gameActions } from "../../store/features/Game";
 
-import "./PlayAgainBtn.style.scss";
+import styles from "./PlayAgainBtn.style.module.scss";
 
-function PlayAgainBtn() {
+const PlayAgainBtn = () => {
   const dispatch = useDispatch();
 
   const { screenUpdatedToMenu } = bindActionCreators(gameActions, dispatch);
 
-  const onPlayAgainBtnClick = () => {
+  const onBtnClick = () => {
     screenUpdatedToMenu();
   };
 
   return (
-    <button onClick={onPlayAgainBtnClick} className="play-again-btn">
+    <button onClick={onBtnClick} className={styles.playAgainBtn}>
       PLAY AGAIN
     </button>
   );
-}
+};
 
 export default PlayAgainBtn;

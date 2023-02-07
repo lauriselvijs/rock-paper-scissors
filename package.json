@@ -11,8 +11,9 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-scripts": "5.0.0",
-    "react-use": "^17.4.0",
+    "react-transition-group": "^4.4.5",
     "redux": "^4.2.1",
+    "redux-persist": "^6.0.0",
     "sass": "^1.57.1"
   },
   "scripts": {
