@@ -1,22 +1,13 @@
-import { useEffect, useState } from "react";
-import { HOUSE, PLAYER } from "../../constant/Participant";
+import { useSelector } from "react-redux";
+import { gameSliceName } from "../../store/features/Game";
+import { getWinnerMsg } from "./GameResultMsg.config";
 
 import "./GameResultMsg.style.scss";
 
-function GameResultMsg({ winner }) {
-  const [msg, setMsg] = useState("");
+function GameResultMsg() {
+  const { winner } = useSelector((state) => state[gameSliceName]);
 
-  useEffect(() => {
-    if (winner === PLAYER) {
-      setMsg("You win!");
-    } else if (winner === HOUSE) {
-      setMsg("You loose!");
-    } else {
-      setMsg("Its draw!");
-    }
-  }, [winner]);
-
-  return <div className="game-msg">{msg}</div>;
+  return <div className="game-msg">YOU {getWinnerMsg(winner)}</div>;
 }
 
 export default GameResultMsg;

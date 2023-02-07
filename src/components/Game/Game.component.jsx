@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
 
 import RulesModalBtn from "../RulesModalBtn";
@@ -10,20 +10,12 @@ import PlayAgainBtn from "../PlayAgainBtn";
 import RulesModal from "../RulesModal";
 import { MAIN_SCREEN, MENU_SCREEN } from "../../constant/GameScreen";
 import { gameSliceName } from "../../store/features/Game";
-import { getWinner } from "../../util/Game";
 import Score from "../Score";
 
 import "./Game.style.scss";
 
 function Game() {
-  const [winner, setWinner] = useState("");
-  const { gameScreen, playerGesture } = useSelector(
-    (state) => state[gameSliceName]
-  );
-
-  useEffect(() => {
-    playerGesture && setWinner(getWinner(playerGesture));
-  }, [playerGesture]);
+  const { gameScreen } = useSelector((state) => state[gameSliceName]);
 
   const renderGameScreen = useMemo(() => {
     if (gameScreen === MENU_SCREEN) {
@@ -38,19 +30,19 @@ function Game() {
       return (
         <>
           <div className="play-view">
-            <Player winner={winner} />
-            <House winner={winner} />
+            <Player />
+            <House />
           </div>
-          <GameResultMsg winner={winner} />
+          <GameResultMsg />
           <PlayAgainBtn />
         </>
       );
     }
-  }, [gameScreen, winner]);
+  }, [gameScreen]);
 
   return (
     <div className="game">
-      <Score winner={winner} />
+      <Score />
       <RulesModalBtn />
       <RulesModal />
       {renderGameScreen}

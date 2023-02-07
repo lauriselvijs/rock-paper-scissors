@@ -6,30 +6,26 @@ import "./GameMenu.style.scss";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { gameActions } from "../../store/features/Game";
+import { PAPER, ROCK, SCISSORS } from "../../constant/Gesture";
 
 function SelectMenu() {
   const dispatch = useDispatch();
 
-  const {
-    screenUpdatedToMain,
-    gestureUpdatedToPaper,
-    gestureUpdatedToRock,
-    gestureUpdatedToScissors,
-  } = bindActionCreators(gameActions, dispatch);
+  const { gameUpdatedWithPlayerGesture } = bindActionCreators(
+    gameActions,
+    dispatch
+  );
 
   const onPaperClick = () => {
-    screenUpdatedToMain();
-    gestureUpdatedToPaper();
+    gameUpdatedWithPlayerGesture(PAPER);
   };
 
   const onScissorsClick = () => {
-    screenUpdatedToMain();
-    gestureUpdatedToScissors();
+    gameUpdatedWithPlayerGesture(SCISSORS);
   };
 
   const onRockClick = () => {
-    screenUpdatedToMain();
-    gestureUpdatedToRock();
+    gameUpdatedWithPlayerGesture(ROCK);
   };
 
   return (

@@ -7,8 +7,10 @@ import { SCISSORS, ROCK, PAPER } from "../../constant/Gesture";
 import { PLAYER } from "../../constant/Participant";
 import { gameSliceName } from "../../store/features/Game";
 
-function Player({ winner }) {
-  const { playerGesture } = useSelector((state) => state[gameSliceName]);
+function Player() {
+  const { playerGesture, winner } = useSelector(
+    (state) => state[gameSliceName]
+  );
 
   return (
     <div className="player">

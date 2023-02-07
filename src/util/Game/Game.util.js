@@ -1,18 +1,25 @@
 import { PAPER, ROCK, SCISSORS } from "../../constant/Gesture";
-import { PLAYER, HOUSE } from "../../constant/Participant";
-import { wins } from "../../constant/Rules";
+import { PLAYER, HOUSE, DRAW } from "../../constant/Participant";
+import { WIN_COMBINATIONS } from "../../constant/Rules/Rules.const";
+
+const gestures = [PAPER, ROCK, SCISSORS];
 
 export const getRandomGesture = () => {
-  const gestures = [PAPER, ROCK, SCISSORS];
   const gesture = gestures[Math.floor(Math.random() * gestures.length)];
 
   return gesture;
 };
 
-export const getWinner = (playerGesture) => {
-  const houseGesture = getRandomGesture();
+export const getWinner = (playerGesture, homeGesture) => {
+  if (!gestures.includes(playerGesture) || !gestures.includes(homeGesture)) {
+    const validChoices = gestures.join(", ");
 
-  console.log("house", houseGesture, "player", playerGesture);
+    throw new Error(`Invalid choice. Only ${validChoices} are allowed.`);
+  }
 
-  return wins[playerGesture] === houseGesture ? HOUSE : PLAYER;
+  if (playerGesture === homeGesture) {
+    return DRAW;
+  }
+
+  return WIN_COMBINATIONS[playerGesture] === homeGesture ? PLAYER : HOUSE;
 };
