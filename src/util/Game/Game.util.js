@@ -1,6 +1,6 @@
 import { PAPER, ROCK, SCISSORS } from "../../constant/Gesture";
 import { PLAYER, HOUSE, DRAW } from "../../constant/Participant";
-import { WIN_COMBINATIONS } from "../../constant/Rules/Rules.const";
+import { WIN_COMBINATION } from "../../constant/Rules/Rules.const";
 
 const gestures = [PAPER, ROCK, SCISSORS];
 
@@ -21,5 +21,5 @@ export const getWinner = (playerGesture, homeGesture) => {
     return DRAW;
   }
 
-  return WIN_COMBINATIONS[playerGesture] === homeGesture ? PLAYER : HOUSE;
+  return WIN_COMBINATION[playerGesture] === homeGesture ? PLAYER : HOUSE;
 };

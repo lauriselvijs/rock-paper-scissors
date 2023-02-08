@@ -1,0 +1,28 @@
+@use "../utils/variable";
+@use "../utils/media";
+
+button {
+  font-family: variable.$font-family;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+@mixin primary {
+  background-color: variable.$white;
+  border-radius: 8px;
+  border: none;
+  color: variable.$primary-btn-color;
+  font-size: 12px;
+  font-weight: variable.$font-weight-semi-bold;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  transition: transform 0.2s linear;
+
+  @include media.hover {
+    transform: scale(1.1);
+  }
+}
+
+@mixin secondary {
+  @include primary;
+}

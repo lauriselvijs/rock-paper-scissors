@@ -1,10 +1,26 @@
 @use "../utils/variable";
+@use "../utils/media";
 
-@mixin player-name {
+h2 {
+  color: variable.$white;
+  font-size: 32px;
+  font-weight: variable.$font-weight-bold;
+}
+
+h3 {
   color: variable.$white;
   font-size: 14px;
   font-weight: variable.$font-weight-bold;
   letter-spacing: 1px;
-  padding-top: 50px;
-  padding-bottom: 90px;
+}
+
+@mixin player-name {
+  text-transform: uppercase;
+  padding-bottom: 60px;
+
+  @include media.mobile {
+    order: 1;
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
 }

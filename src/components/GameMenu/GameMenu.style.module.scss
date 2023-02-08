@@ -1,6 +1,15 @@
 @use "../../style/utils/media";
 
-@mixin gesture {
+@mixin gesture-btn {
+  margin: 0;
+  padding: 0;
+
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
   position: absolute;
   transition: transform 0.2s linear;
 
@@ -11,6 +20,10 @@
   @include media.mobile {
     & {
       transform: scale(0.8);
+
+      &:hover {
+        transform: scale(0.9);
+      }
     }
   }
 }
@@ -30,21 +43,21 @@
   }
 
   .paper {
-    @include gesture;
+    @include gesture-btn;
 
     left: 0;
     top: -55px;
   }
 
   .rock {
-    @include gesture;
+    @include gesture-btn;
 
     right: 0;
     top: -55px;
   }
 
   .scissors {
-    @include gesture;
+    @include gesture-btn;
 
     bottom: -55px;
   }

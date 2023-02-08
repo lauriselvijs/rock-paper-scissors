@@ -1,0 +1,12 @@
+@use "../utils/media";
+
+@mixin game-result {
+  transform: scale(1.8);
+  transition: transform 0.2s linear;
+
+  @include media.mobile {
+    & {
+      transform: scale(1);
+    }
+  }
+}

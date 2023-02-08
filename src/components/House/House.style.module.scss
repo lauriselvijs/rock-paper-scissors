@@ -1,6 +1,7 @@
 @use "../../style/components/text";
 @use "../../style/components/gradient";
 @use "../../style/utils/media";
+@use "../../style/components/gesture";
 
 .house {
   display: flex;
@@ -13,12 +14,6 @@
   }
 
   .gesture {
-    transform: scale(2);
-  }
-}
-
-@include media.mobile {
-  .house .gesture {
-    transform: scale(1.5);
+    @include gesture.game-result;
   }
 }

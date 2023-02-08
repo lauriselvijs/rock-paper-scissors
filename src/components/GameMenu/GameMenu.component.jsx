@@ -33,24 +33,23 @@ const SelectMenu = () => {
   return (
     <div className={styles.gameMenu}>
       <img src={triangle} alt="Triangle" className={styles.triangle} />
-      <img
-        src={paper}
-        onClick={onPaperClick}
-        alt="Paper"
+      <button
+        aria-label="Paper"
         className={styles.paper}
-      />
-      <img
-        src={scissors}
-        onClick={onScissorsClick}
-        alt="Scissors"
+        onClick={onPaperClick}
+      >
+        <img src={paper} alt="Paper" width={107} height={110} />
+      </button>
+      <button
+        aria-label="Scissors"
         className={styles.scissors}
-      />
-      <img
-        src={rock}
-        onClick={onRockClick}
-        alt="Rock"
-        className={styles.rock}
-      />
+        onClick={onScissorsClick}
+      >
+        <img src={scissors} alt="Scissors" width={107} height={110} />
+      </button>
+      <button aria-label="Rock" className={styles.rock} onClick={onRockClick}>
+        <img src={rock} alt="Rock" width={107} height={110} />
+      </button>
     </div>
   );
 };

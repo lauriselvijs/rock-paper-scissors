@@ -10,20 +10,33 @@
   .mainScreen {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    gap: 20vh;
+    .players {
+      display: flex;
+      gap: 10vw;
+
+      @include media.mobile {
+        flex-direction: row;
+        justify-content: center;
+
+        gap: 5vw;
+      }
+    }
+
+    .controls {
+      display: block;
+
+      @include media.mobile {
+        display: none;
+      }
+    }
+
+    .controlsMobile {
+      display: none;
+
+      @include media.mobile {
+        display: block;
+      }
+    }
   }
-
-  .players {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 20vw;
-  }
-}
-
-@include media.mobile {
 }

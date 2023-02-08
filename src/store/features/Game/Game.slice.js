@@ -40,6 +40,9 @@ const game = createSlice({
     screenUpdatedToMenu: (state) => {
       state.gameScreen = MENU_SCREEN;
     },
+    scoreReset: (state) => {
+      state.score = 0;
+    },
   },
 });
 

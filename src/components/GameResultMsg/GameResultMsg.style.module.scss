@@ -20,11 +20,7 @@
 
 .gameResultMsg {
   animation: blink 1s linear 0s 3;
-  color: variable.$white;
-  font-family: variable.$font-family;
-  font-size: 32px;
-  font-weight: variable.$font-weight-bold;
   padding: 16px;
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
 }

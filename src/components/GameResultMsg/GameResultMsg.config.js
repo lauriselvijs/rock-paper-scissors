@@ -2,7 +2,7 @@ import { HOUSE, PLAYER, DRAW } from "../../constant/Participant";
 
 export const MESSAGES = {
   [DRAW]: "Draw",
-  [HOUSE]: "You lost",
+  [HOUSE]: "You loose",
   [PLAYER]: "You win",
 };
 

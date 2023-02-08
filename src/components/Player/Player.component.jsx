@@ -1,30 +1,22 @@
-import styles from "./Player.style.module.scss";
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
-import paper from "../../asset/icons/paper.svg";
-import scissors from "../../asset/icons/scissors.svg";
-import rock from "../../asset/icons/rock.svg";
-import { SCISSORS, ROCK, PAPER } from "../../constant/Gesture";
-import { PLAYER } from "../../constant/Participant";
+
+import { GESTURE_SRC } from "../../constant/Gesture";
 import { gameSliceName } from "../../store/features/Game";
+
+import styles from "./Player.style.module.scss";
 
 function Player() {
   const { playerGesture, winner } = useSelector(
     (state) => state[gameSliceName]
   );
 
+  const gestureSrc = useMemo(() => GESTURE_SRC[playerGesture], [playerGesture]);
+
   return (
     <div className={styles.player}>
-      <div className={styles.youPicked}>YOU PICKED</div>
-      {playerGesture === PAPER && (
-        <img src={paper} alt="Paper" className={styles.gesture} />
-      )}
-      {playerGesture === SCISSORS && (
-        <img src={scissors} alt="Scissors" className={styles.gesture} />
-      )}
-      {playerGesture === ROCK && (
-        <img src={rock} alt="Rock" className={styles.gesture} />
-      )}
-      {/* {winner === PLAYER && <div className="winner-gradient" />} */}
+      <h3 className={styles.youPicked}>YOU PICKED</h3>
+      <img src={gestureSrc} alt={playerGesture} className={styles.gesture} />
     </div>
   );
 }

@@ -1,9 +1,10 @@
 @use "../../style/utils/variable";
 @use "../../style/utils/media";
+@use "../../style/components/button";
 
 .score {
   align-items: center;
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex;
   gap: 20px;
   justify-content: space-between;
@@ -19,23 +20,23 @@
   }
 
   .points {
+    @include button.primary;
+
     align-items: center;
-    background-color: variable.$white;
-    border-radius: 10px 10px;
+    align-self: stretch;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 26px;
+    min-width: 99px;
+    width: 20%;
 
     &Text {
       color: variable.$score-text;
       font-size: 10px;
-      font-weight: variable.$font-weight-semi-bold;
     }
 
     &Result {
       color: variable.$dark-text;
-      font-family: variable.$font-family;
       font-size: 42px;
       font-weight: variable.$font-weight-bold;
       line-height: 85%;

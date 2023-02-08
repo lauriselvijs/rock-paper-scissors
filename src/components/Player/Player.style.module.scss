@@ -1,6 +1,7 @@
 @use "../../style/components/text";
 @use "../../style/components/gradient";
 @use "../../style/utils/media";
+@use "../../style/components/gesture";
 
 .player {
   display: flex;
@@ -14,12 +15,6 @@
   }
 
   .gesture {
-    transform: scale(2);
-  }
-}
-
-@include media.mobile {
-  .gesture {
-    transform: scale(0.8);
+    @include gesture.game-result;
   }
 }
