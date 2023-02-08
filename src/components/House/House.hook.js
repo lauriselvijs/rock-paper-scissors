@@ -17,15 +17,7 @@ export const useHouse = () => {
   const [gesture, setGesture] = useState();
 
   const dispatch = useDispatch();
-  const { winnerUpdated } = bindActionCreators(gameActions, dispatch);
-
-  useEffect(() => {
-    const houseGesture = getRandomGesture();
-    setGesture(houseGesture);
-
-    const winner = getWinner(playerGesture, houseGesture);
-    winnerUpdated(winner);
-  }, [playerGesture]);
+  const { gameResultUpdated } = bindActionCreators(gameActions, dispatch);
 
   useEffect(() => {
     let intervalId = null;
@@ -36,14 +28,21 @@ export const useHouse = () => {
 
     const timeoutId = setTimeout(() => {
       clearInterval(intervalId);
-      setGestureSrc(GESTURE_SRC[gesture]);
+
+      const houseGesture = getRandomGesture();
+      const winner = getWinner(playerGesture, houseGesture);
+
+      gameResultUpdated(winner);
+
+      setGesture(houseGesture);
+      setGestureSrc(GESTURE_SRC[houseGesture]);
     }, ANIMATION_LENGTH);
 
     return () => {
       clearTimeout(timeoutId);
       clearInterval(intervalId);
     };
-  }, [gesture]);
+  }, [playerGesture]);
 
   return { gestureSrc, gesture };
 };

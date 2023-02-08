@@ -11,36 +11,22 @@ const game = createSlice({
   name: SLICE_NAME,
   initialState: state,
   reducers: {
-    playerGestureUpdated: (state, action) => {
-      state.playerGesture = action.payload;
+    playerGestureUpdated: (state, { payload: playerGesture }) => {
+      state.playerGesture = playerGesture;
       state.gameScreen = MAIN_SCREEN;
+      state.loading = true;
     },
-    winnerUpdated: (state, action) => {
-      state.winner = action.payload;
+    gameResultUpdated: (state, { payload: winner }) => {
+      state.winner = winner;
+
+      if (winner === PLAYER) {
+        state.score = state.score + 1;
+      } else if (winner === HOUSE && state.score > 0) {
+        state.score = state.score - 1;
+      }
+
+      state.loading = false;
     },
-    // gameUpdatedWithPlayerGesture: {
-    //   prepare: (playerGesture) => {
-    //     const houseGesture = getRandomGesture();
-    //     const winner = getWinner(playerGesture, houseGesture);
-
-    //     return { payload: { playerGesture, houseGesture, winner } };
-    //   },
-    //   reducer: (
-    //     state,
-    //     { payload: { playerGesture, houseGesture, winner } }
-    //   ) => {
-    //     state.gameScreen = MAIN_SCREEN;
-    //     state.playerGesture = playerGesture;
-    //     state.houseGesture = houseGesture;
-    //     state.winner = winner;
-
-    //     if (winner === PLAYER) {
-    //       state.score = state.score + 1;
-    //     } else if (winner === HOUSE && state.score > 0) {
-    //       state.score = state.score - 1;
-    //     }
-    //   },
-    // },
     screenUpdatedToMain: (state) => {
       state.gameScreen = MAIN_SCREEN;
     },

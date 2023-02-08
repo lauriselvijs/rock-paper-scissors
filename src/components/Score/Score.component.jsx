@@ -11,15 +11,9 @@ import { useEffect, useState } from "react";
 
 const Score = () => {
   const { score } = useSelector((state) => state[gameSliceName]);
-  const timeoutEnded = useTimeout(ANIMATION_LENGTH, [score]);
-  const [previousScore, setPreviousScore] = useState(score);
 
   const dispatch = useDispatch();
   const { scoreReset } = bindActionCreators(gameActions, dispatch);
-
-  useEffect(() => {
-    setPreviousScore(score);
-  }, [score]);
 
   const onResetClick = () => {
     scoreReset();
@@ -41,9 +35,7 @@ const Score = () => {
         className={styles.points}
       >
         <div className={styles.pointsText}>SCORE</div>
-        <div className={styles.pointsResult}>
-          {timeoutEnded ? score : previousScore}
-        </div>
+        <div className={styles.pointsResult}>{score}</div>
       </button>
     </div>
   );

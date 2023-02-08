@@ -9,21 +9,10 @@ import {
   REGISTER,
   persistStore,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { rulesModalSliceName } from "../features/RulesModal";
 import rootReducer from "./reducer";
 
-const persistConfig = {
-  key: "root",
-  version: 1,
-  storage,
-  blacklist: [rulesModalSliceName],
-};
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
