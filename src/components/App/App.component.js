@@ -1,7 +1,7 @@
-import Game from "./components/Game";
-import Author from "./components/Author";
+import Game from "../Game";
+import Author from "../Author";
 
-function App() {
+const App = () => {
   return (
     <>
       <main>
@@ -12,6 +12,6 @@ function App() {
       </footer>
     </>
   );
-}
+};
 
 export default App;

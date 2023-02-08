@@ -1,6 +1,11 @@
 @use "../utils/variable";
 @use "../utils/media";
 
+:root {
+  --button-bg-color: #{variable.$white};
+  --button-border: none;
+}
+
 button {
   font-family: variable.$font-family;
 
@@ -8,9 +13,9 @@ button {
 }
 
 @mixin primary {
-  background-color: variable.$white;
+  background-color: var(--button-bg-color);
   border-radius: 8px;
-  border: none;
+  border: var(--button-border);
   color: variable.$primary-btn-color;
   font-size: 12px;
   font-weight: variable.$font-weight-semi-bold;
@@ -24,5 +29,11 @@ button {
 }
 
 @mixin secondary {
-  @include primary;
+  --button-bg-color: transparent;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--button-bg-color);
+  border: var(--button-border);
 }

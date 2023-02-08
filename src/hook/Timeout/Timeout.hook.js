@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
-export const useDelay = (delay) => {
+export const useTimeout = (delay, dependencies = []) => {
+  if (!Array.isArray(dependencies)) {
+    throw new Error("Dependencies must be an array");
+  }
+
   const [timeoutEnded, setTimeoutEnded] = useState(false);
 
   useEffect(() => {
@@ -11,7 +15,7 @@ export const useDelay = (delay) => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, dependencies);
 
   return timeoutEnded;
 };

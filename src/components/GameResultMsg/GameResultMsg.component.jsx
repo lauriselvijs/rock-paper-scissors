@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
-import { ANIMATION_LENGTH } from "../../config/GameAnimation.config";
-import { useDelay } from "../../hook/Delay/Delay.hook";
+import { ANIMATION_LENGTH } from "../../config/GameAnimation";
+import { useTimeout } from "../../hook/Timeout";
 
 import { gameSliceName } from "../../store/features/Game";
 
@@ -10,7 +10,7 @@ import styles from "./GameResultMsg.style.module.scss";
 
 const GameResultMsg = () => {
   const { winner } = useSelector((state) => state[gameSliceName]);
-  const timeoutEnded = useDelay(ANIMATION_LENGTH);
+  const timeoutEnded = useTimeout(ANIMATION_LENGTH);
 
   const msg = useMemo(() => getWinnerMsg(winner), [winner]);
 

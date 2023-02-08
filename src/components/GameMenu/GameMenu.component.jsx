@@ -13,21 +13,18 @@ import styles from "./GameMenu.style.module.scss";
 const SelectMenu = () => {
   const dispatch = useDispatch();
 
-  const { gameUpdatedWithPlayerGesture } = bindActionCreators(
-    gameActions,
-    dispatch
-  );
+  const { playerGestureUpdated } = bindActionCreators(gameActions, dispatch);
 
   const onPaperClick = () => {
-    gameUpdatedWithPlayerGesture(PAPER);
+    playerGestureUpdated(PAPER);
   };
 
   const onScissorsClick = () => {
-    gameUpdatedWithPlayerGesture(SCISSORS);
+    playerGestureUpdated(SCISSORS);
   };
 
   const onRockClick = () => {
-    gameUpdatedWithPlayerGesture(ROCK);
+    playerGestureUpdated(ROCK);
   };
 
   return (

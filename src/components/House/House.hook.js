@@ -1,34 +1,49 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import { ANIMATION_LENGTH } from "../../config/GameAnimation.config";
+import { ANIMATION_LENGTH } from "../../config/GameAnimation";
 import { GESTURE_SRC } from "../../constant/Gesture";
 import { gameSliceName } from "../../store/features/Game";
 import { getRandomGesture } from "../../util/Game";
+import { gameActions } from "../../store/features/Game";
+import { getWinner } from "../../util/Game";
 
 import { FRAME_LENGTH } from "./House.config";
 
-export const useGestureImage = () => {
-  const { houseGesture } = useSelector((state) => state[gameSliceName]);
+export const useHouse = () => {
+  const { playerGesture } = useSelector((state) => state[gameSliceName]);
+  const [gestureSrc, setGestureSrc] = useState(GESTURE_SRC[getRandomGesture()]);
+  const [gesture, setGesture] = useState();
 
-  const [src, setSrc] = useState(GESTURE_SRC[getRandomGesture()]);
+  const dispatch = useDispatch();
+  const { winnerUpdated } = bindActionCreators(gameActions, dispatch);
+
+  useEffect(() => {
+    const houseGesture = getRandomGesture();
+    setGesture(houseGesture);
+
+    const winner = getWinner(playerGesture, houseGesture);
+    winnerUpdated(winner);
+  }, [playerGesture]);
 
   useEffect(() => {
     let intervalId = null;
 
     intervalId = setInterval(() => {
-      setSrc(GESTURE_SRC[getRandomGesture()]);
+      setGestureSrc(GESTURE_SRC[getRandomGesture()]);
     }, FRAME_LENGTH);
 
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       clearInterval(intervalId);
-      setSrc(GESTURE_SRC[houseGesture]);
+      setGestureSrc(GESTURE_SRC[gesture]);
     }, ANIMATION_LENGTH);
 
     return () => {
+      clearTimeout(timeoutId);
       clearInterval(intervalId);
     };
-  }, [houseGesture]);
+  }, [gesture]);
 
-  return { src, houseGesture };
+  return { gestureSrc, gesture };
 };

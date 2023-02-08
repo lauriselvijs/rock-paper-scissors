@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import { ANIMATION_LENGTH } from "../../config/GameAnimation.config";
-import { useDelay } from "../../hook/Delay/Delay.hook";
+import { ANIMATION_LENGTH } from "../../config/GameAnimation";
+import { useTimeout } from "../../hook/Timeout";
 
 import { gameActions } from "../../store/features/Game";
 
@@ -11,7 +11,7 @@ const PlayAgainBtn = () => {
   const dispatch = useDispatch();
 
   const { screenUpdatedToMenu } = bindActionCreators(gameActions, dispatch);
-  const timeoutEnded = useDelay(ANIMATION_LENGTH);
+  const timeoutEnded = useTimeout(ANIMATION_LENGTH);
 
   const onBtnClick = () => {
     screenUpdatedToMenu();

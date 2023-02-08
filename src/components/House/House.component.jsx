@@ -1,15 +1,15 @@
 import styles from "./House.style.module.scss";
-import { useGestureImage } from "./House.hook";
+import { useHouse } from "./House.hook";
 
 const House = () => {
-  const { src, houseGesture } = useGestureImage();
+  const { gestureSrc, gesture } = useHouse();
 
   return (
     <div className={styles.house}>
       <h3 className={styles.pickedTitle}>HOUSE PICKED</h3>
       <img
-        src={src}
-        alt={houseGesture}
+        src={gestureSrc}
+        alt={gesture}
         className={styles.gesture}
         width={107}
         height={110}
