@@ -6,39 +6,26 @@
   flex-direction: column;
   justify-content: space-around;
   min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
 
   .mainScreen {
+    align-items: center;
     display: flex;
-    flex-direction: column;
+    gap: 10vw;
+    justify-content: center;
 
-    .players {
-      display: flex;
-      gap: 10vw;
-
-      @include media.mobile {
-        flex-direction: row;
-        justify-content: center;
-
-        gap: 5vw;
-      }
+    @include media.mobile {
+      flex-wrap: wrap;
+      gap: 5vw;
+      padding-top: 20px;
     }
+  }
 
-    .controls {
-      display: block;
-
-      @include media.mobile {
-        display: none;
-      }
-    }
-
-    .controlsMobile {
-      display: none;
-
-      @include media.mobile {
-        display: block;
-      }
+  .controls {
+    @include media.mobile {
+      max-width: 160px;
+      order: 1;
+      width: 60%;
     }
   }
 }

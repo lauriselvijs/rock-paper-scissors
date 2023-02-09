@@ -24,22 +24,14 @@ const Game = () => {
 
     if (gameScreen === MAIN_SCREEN) {
       return (
-        <>
-          <div className={styles.mainScreen}>
-            <div className={styles.players}>
-              <Player />
-              <div className={styles.controls}>
-                <GameResultMsg />
-                <PlayAgainBtn />
-              </div>
-              <House />
-            </div>
-            <div className={styles.controlsMobile}>
-              <GameResultMsg />
-              <PlayAgainBtn />
-            </div>
+        <div className={styles.mainScreen}>
+          <Player />
+          <div className={styles.controls}>
+            <GameResultMsg />
+            <PlayAgainBtn />
           </div>
-        </>
+          <House />
+        </div>
       );
     }
   }, [gameScreen]);
