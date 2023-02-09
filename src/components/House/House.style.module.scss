@@ -1,13 +1,14 @@
 @use "../../style/components/text";
 @use "../../style/components/gradient";
-@use "../../style/utils/media";
 @use "../../style/components/gesture";
+@use "../../style/utils/media";
 
 .house {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  position: relative;
 
   .pickedTitle {
     @include text.player-name;
@@ -15,5 +16,17 @@
 
   .gesture {
     @include gesture.game-result;
+  }
+
+  .winnerGradient {
+    @include gradient.winner;
+
+    left: -185%;
+    top: -55%;
+
+    @include media.mobile {
+      left: -65%;
+      top: -50%;
+    }
   }
 }

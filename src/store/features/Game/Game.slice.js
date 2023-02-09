@@ -14,6 +14,7 @@ const game = createSlice({
     playerGestureUpdated: (state, { payload: playerGesture }) => {
       state.playerGesture = playerGesture;
       state.gameScreen = MAIN_SCREEN;
+      state.winner = "";
       state.loading = true;
     },
     gameResultUpdated: (state, { payload: winner }) => {

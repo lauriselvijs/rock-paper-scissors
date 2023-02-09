@@ -1,8 +1,14 @@
 import styles from "./House.style.module.scss";
 import { useHouse } from "./House.hook";
+import { useMemo } from "react";
 
 const House = () => {
-  const { gestureSrc, gesture } = useHouse();
+  const { gestureSrc, gesture, isWinner } = useHouse();
+
+  const renderWinnerGradient = useMemo(
+    () => isWinner && <div className={styles.winnerGradient} />,
+    [isWinner]
+  );
 
   return (
     <div className={styles.house}>
@@ -14,7 +20,7 @@ const House = () => {
         width={107}
         height={110}
       />
-      {/* {winner === HOUSE && <div className="winner-gradient-house" />} */}
+      {renderWinnerGradient}
     </div>
   );
 };

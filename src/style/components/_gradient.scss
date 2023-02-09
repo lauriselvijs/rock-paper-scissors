@@ -1,16 +1,25 @@
-@use "../utils/variable";
+@use "../utils/media";
 
-@mixin winner-gradient {
-  z-index: -1;
+@mixin winner {
   background-image: radial-gradient(
     hsla(0, 0%, 100%, 0.1) 0,
     hsla(0, 0%, 100%, 0.1) 40%,
-    variable.$radiant-bg-dark-blue 40%,
-    variable.$radiant-bg-dark-blue 41%,
+    var(--color-radiant-bg-primary) 40%,
+    var(--color-radiant-bg-primary) 41%,
     hsla(0, 0%, 100%, 0.1) 54%,
-    variable.$radiant-bg-dark-blue 54%,
-    variable.$radiant-bg-dark-blue 55%,
+    var(--color-radiant-bg-primary) 54%,
+    var(--color-radiant-bg-primary) 55%,
     hsla(0, 0%, 100%, 0.1) 100%
   );
   border-radius: 50%;
+  height: 600px;
+  position: absolute;
+  transition: all 0.2s linear;
+  width: 600px;
+  z-index: -1;
+
+  @include media.mobile {
+    height: 300px;
+    width: 300px;
+  }
 }

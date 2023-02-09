@@ -17,4 +17,16 @@
   .gesture {
     @include gesture.game-result;
   }
+
+  .winnerGradient {
+    @include gradient.winner;
+
+    left: -235%;
+    top: -55%;
+
+    @include media.mobile {
+      left: -90%;
+      top: -50%;
+    }
+  }
 }
