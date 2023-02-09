@@ -1,17 +1,30 @@
 @use "../utils/variable";
 @use "../utils/media";
+@use "../base/font";
+
+:root {
+  --text-color: var(--color-secondary);
+}
 
 h2 {
-  color: variable.$white;
-  font-size: 32px;
-  font-weight: variable.$font-weight-bold;
+  color: var(--text-color);
+  font-size: font.$size-xl;
+  font-weight: font.$weight-bold;
 }
 
 h3 {
-  color: variable.$white;
-  font-size: 14px;
-  font-weight: variable.$font-weight-bold;
-  letter-spacing: 1px;
+  color: var(--text-color);
+  font-size: font.$size-lg;
+  font-weight: font.$weight-bold;
+  letter-spacing: 0.125rem;
+}
+
+p {
+  --text-color: var(--color-primary-light);
+
+  color: var(--text-color);
+  font-size: font.$size-md;
+  font-weight: font.$weight-bold;
 }
 
 @mixin player-name {

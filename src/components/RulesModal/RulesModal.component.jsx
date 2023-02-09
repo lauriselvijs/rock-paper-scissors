@@ -1,6 +1,6 @@
-import styles from "./RulesModal.style.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
+
 import closeIcon from "../../asset/icons/icon-close.svg";
 import rulesImg from "../../asset/icons/image-rules.svg";
 import {
@@ -8,7 +8,9 @@ import {
   rulesModalSliceName,
 } from "../../store/features/RulesModal";
 
-function RulesModal() {
+import styles from "./RulesModal.style.module.scss";
+
+const RulesModal = () => {
   const { modalOpen } = useSelector((state) => state[rulesModalSliceName]);
   const dispatch = useDispatch();
 
@@ -18,23 +20,37 @@ function RulesModal() {
     modalClosed();
   };
 
-  return (
-    <div
-      className="rules-modal"
-      style={{ display: modalOpen ? "flex" : "none" }}
-    >
-      <div className="rules-modal-content">
-        <h1 className="rules-title">RULES</h1>
-        <img src={rulesImg} alt="How to play" className="rules-img" />
-        <img
-          onClick={onCloseBtnClick}
-          src={closeIcon}
-          alt="Close icon"
-          className="close-icon"
-        />
+  if (modalOpen) {
+    return (
+      <div className={styles.rulesModal}>
+        <div className={styles.contents}>
+          <h2 className={styles.title}>RULES</h2>
+          <img
+            src={rulesImg}
+            alt="How to play"
+            className={styles.img}
+            width={304}
+            height={270}
+          />
+          <button
+            aria-label="Close modal"
+            className={styles.btn}
+            onClick={onCloseBtnClick}
+          >
+            <img
+              src={closeIcon}
+              alt="Close icon"
+              className={styles.closeIcon}
+              width={20}
+              height={20}
+            />
+          </button>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+
+  return null;
+};
 
 export default RulesModal;

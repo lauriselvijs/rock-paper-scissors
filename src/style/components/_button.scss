@@ -1,25 +1,32 @@
 @use "../utils/variable";
 @use "../utils/media";
+@use "../base/font";
 
 :root {
-  --button-bg-color: #{variable.$white};
+  --button-bg-color: var(--color-secondary);
+  --button-border-radius: 8px;
   --button-border: none;
+  --button-color: var(--btn-text);
+  --button-font-size: #{font.$size-md};
+  --button-padding: 12px 24px;
+  --button-font-weight: #{font.$weight-semi-bold};
 }
 
 button {
   font-family: variable.$font-family;
+  line-height: font.$line-height;
 
   -webkit-tap-highlight-color: transparent;
 }
 
 @mixin primary {
   background-color: var(--button-bg-color);
-  border-radius: 8px;
+  border-radius: var(--button-border-radius);
   border: var(--button-border);
-  color: variable.$primary-btn-color;
-  font-size: 12px;
-  font-weight: variable.$font-weight-semi-bold;
-  padding: 12px 24px;
+  color: var(--button-color);
+  font-size: var(--button-font-size);
+  font-weight: (--button-font-weight);
+  padding: var(--button-padding);
   text-transform: uppercase;
   transition: transform 0.2s linear;
 
@@ -36,4 +43,15 @@ button {
 
   background-color: var(--button-bg-color);
   border: var(--button-border);
+}
+
+@mixin tertiary {
+  @include primary;
+
+  --button-bg-color: transparent;
+  --button-border-radius: 8px;
+  --button-border: var(--color-border) solid 2px;
+  --button-color: var(--color-secondary);
+  --button-font-size: #{font.$size-sm};
+  --button-padding: 10px 20px;
 }

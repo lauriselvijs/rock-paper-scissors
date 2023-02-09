@@ -47,8 +47,8 @@ const Game = () => {
   return (
     <div className={styles.game}>
       <Score />
-      {/* <RulesModalBtn /> */}
-      {/* <RulesModal /> */}
+      <RulesModalBtn />
+      <RulesModal />
       {renderGameScreen}
     </div>
   );

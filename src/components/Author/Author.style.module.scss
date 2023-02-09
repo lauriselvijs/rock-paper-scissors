@@ -1,15 +1,16 @@
 @use "../../style/utils/variable";
+@use "../../style/base/font";
 
 .author {
   position: fixed;
   left: 0;
   bottom: 20px;
   width: 100%;
-  font-size: 12px;
+  font-size: font.$size-sm;
   text-align: center;
-  color: variable.$white;
+  color: var(--color-secondary);
 
   & a {
-    color: variable.$dark-text;
+    color: var(--color-primary);
   }
 }

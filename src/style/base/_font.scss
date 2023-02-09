@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: local("Barlow Semi Condensed") local("BarlowSemiCondensed-SemiBold")
+    url("../font/BarlowSemiCondensed/BarlowSemiCondensed-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: local("Barlow Semi Condensed") local("BarlowSemiCondensed-Bold")
+    url("../font/BarlowSemiCondensed/BarlowSemiCondensed-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+}
+
+$family: "Barlow Semi Condensed", sans-serif, Arial, sans-serif;
+
+$weight-semi-bold: 600;
+$weight-bold: 700;
+
+$size-title: 2.75rem;
+$size-xl: 2.25rem;
+$size-lg: 1.125rem;
+$size-md: 0.875rem;
+$size-sm: 0.75rem;
+
+$line-height: 1.5;

@@ -1,19 +1,11 @@
 @use "../../style/utils/variable";
+@use "../../style/components/button";
 
 .rulesBtn {
-  padding: 10px 40px;
+  @include button.tertiary;
 
-  color: variable.$white;
-  font-size: 10px;
-  font-weight: variable.$font-weight-bold;
-  letter-spacing: 2px;
-  outline: variable.$header-outline solid 2px;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  margin-top: 10px;
-
-  &:hover {
-    transform: scale(1.2);
-  }
+  align-self: flex-end;
+  letter-spacing: 0.125rem;
+  margin-right: 20px;
+  order: 1;
 }

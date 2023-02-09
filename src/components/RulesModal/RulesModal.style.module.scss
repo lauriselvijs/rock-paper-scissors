@@ -1,8 +1,10 @@
 @use "../../style/utils/variable";
 @use "../../style/utils/media";
 
-.rules-modal {
+.rulesModal {
   position: fixed;
+
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
@@ -11,40 +13,19 @@
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: hsla(0, 0%, 0%, 0.4);
 
-  animation-name: module-animation-start;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-
-  @keyframes module-animation-start {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-      display: block;
-    }
-  }
-
-  &-content {
+  .contents {
     align-items: center;
-    background-color: variable.$white;
-    border-radius: 5px;
+    background-color: var(--color-secondary);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-height: 370px;
-    max-width: 310px;
-    padding: 15px 20px;
-    overflow: auto;
-    width: 100vw;
-    height: 100vh;
+    padding: 16px 20px;
 
-    .rules-title {
-      font-size: 28px;
-      font-weight: variable.$font-weight-bold;
-      color: variable.$dark-text;
+    .title {
+      --text-color: var(--color-primary);
     }
 
     .rules-img {
@@ -53,77 +34,6 @@
 
     .close-icon:hover {
       opacity: 0.6;
-    }
-  }
-}
-
-.rules-modal-close {
-  @extend .rules-modal;
-
-  animation-name: module-animation-end;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-
-  @keyframes module-animation-end {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-      display: none;
-    }
-  }
-}
-
-@include media.mobile {
-  .rules-modal {
-    animation-name: module-mobile-animation-start;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
-    background-color: variable.$white;
-    overflow: hidden;
-
-    @keyframes module-mobile-animation-start {
-      from {
-        height: 0;
-      }
-      to {
-        height: 100%;
-      }
-    }
-
-    .rules-img {
-      transform: scale(0.95);
-    }
-
-    .close-icon {
-      position: absolute;
-      top: 80vh;
-      left: 0;
-      right: 0;
-      margin-left: auto;
-      margin-right: auto;
-
-      &:hover {
-        opacity: 0.6;
-      }
-    }
-  }
-
-  .rules-modal-close {
-    @extend .rules-modal;
-
-    animation-name: module-mobile-animation-end;
-    animation-duration: 0.5s;
-
-    @keyframes module-mobile-animation-end {
-      from {
-        height: 100%;
-      }
-      to {
-        height: 0;
-      }
     }
   }
 }

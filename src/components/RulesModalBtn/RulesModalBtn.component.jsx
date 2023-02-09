@@ -7,15 +7,14 @@ import styles from "./RulesModalBtn.style.module.scss";
 
 const RulesModalBtn = () => {
   const dispatch = useDispatch();
-
   const { modalOpened } = bindActionCreators(rulesModalActions, dispatch);
 
-  const onRulesClick = () => {
+  const onBtnClick = () => {
     modalOpened();
   };
 
   return (
-    <button onClick={onRulesClick} className={styles.rulesBtn}>
+    <button onClick={onBtnClick} className={styles.rulesBtn}>
       RULES
     </button>
   );

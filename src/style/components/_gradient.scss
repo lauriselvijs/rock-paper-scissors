@@ -1,19 +1,16 @@
 @use "../utils/variable";
 
 @mixin winner-gradient {
-  position: absolute;
   z-index: -1;
-  height: 540px;
-  width: 540px;
   background-image: radial-gradient(
-    rgb(255, 255, 255, 0.1) 0,
-    rgb(255, 255, 255, 0.1) 40%,
+    hsla(0, 0%, 100%, 0.1) 0,
+    hsla(0, 0%, 100%, 0.1) 40%,
     variable.$radiant-bg-dark-blue 40%,
     variable.$radiant-bg-dark-blue 41%,
-    rgb(255, 255, 255, 0.1) 54%,
+    hsla(0, 0%, 100%, 0.1) 54%,
     variable.$radiant-bg-dark-blue 54%,
     variable.$radiant-bg-dark-blue 55%,
-    rgb(255, 255, 255, 0.1) 100%
+    hsla(0, 0%, 100%, 0.1) 100%
   );
   border-radius: 50%;
 }

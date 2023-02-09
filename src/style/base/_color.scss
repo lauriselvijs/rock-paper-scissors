@@ -1,0 +1,34 @@
+$primary: hsl(229, 25%, 31%);
+$primary-light: hsl(229, 64%, 46%);
+$secondary: hsl(0, 0%, 100%);
+
+$border: hsl(217, 16%, 45%);
+$btn-text: hsl(349, 71%, 52%);
+
+$radiant-bg-primary: hsl(237, 49%, 15%);
+$radiant-bg-secondary: hsl(214, 47%, 23%);
+
+:root {
+  --color-primary-light: var(--imported-color-primary-light, #{$primary-light});
+  --color-primary: var(--imported-color-primary, #{$primary});
+  --color-secondary: var(--imported-color-secondary, #{$secondary});
+
+  --color-bg: var(
+    --imported-color-bg,
+    radial-gradient(
+      farthest-side at 50% 10%,
+      var(--color-radiant-bg-secondary),
+      var(--color-radiant-bg-primary)
+    )
+  );
+  --color-radiant-bg-primary: var(
+    --imported-color-radiant-bg-primary,
+    #{$radiant-bg-primary}
+  );
+  --color-radiant-bg-secondary: var(
+    --imported-color-radiant-bg-secondary,
+    #{$radiant-bg-secondary}
+  );
+  --color-border: var(--imported-color-border, #{$border});
+  --color-btn-text: var(--imported-color-btn-text, #{$btn-text});
+}

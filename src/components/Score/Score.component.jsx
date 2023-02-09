@@ -31,8 +31,8 @@ const Score = () => {
         title="Click to reset score"
         className={styles.points}
       >
-        <div className={styles.pointsText}>SCORE</div>
-        <div className={styles.pointsResult}>{score}</div>
+        <p className={styles.pointsText}>SCORE</p>
+        <h2 className={styles.pointsResult}>{score}</h2>
       </button>
     </div>
   );
