@@ -4,8 +4,9 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: 600px;
   justify-content: space-evenly;
+  min-height: 600px;
+  overflow: auto;
 
   .mainScreen {
     display: flex;

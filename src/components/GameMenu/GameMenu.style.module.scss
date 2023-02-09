@@ -45,19 +45,19 @@
     @include gesture-btn;
 
     left: 0;
-    top: -55px;
+    top: -30%;
   }
 
   .rock {
     @include gesture-btn;
 
     right: 0;
-    top: -55px;
+    top: -30%;
   }
 
   .scissors {
     @include gesture-btn;
 
-    bottom: -55px;
+    bottom: -30%;
   }
 }

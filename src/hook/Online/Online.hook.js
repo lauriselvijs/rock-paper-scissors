@@ -23,4 +23,6 @@ export const useReloadOnOnline = () => {
       window.removeEventListener("offline", handleOffline);
     };
   }, []);
+
+  return { isOnline };
 };

@@ -1,13 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { ANIMATION_LENGTH } from "../../config/GameAnimation";
 import logo from "../../asset/icons/logo.svg";
-import { useTimeout } from "../../hook/Timeout";
 import { gameActions, gameSliceName } from "../../store/features/Game";
 
 import styles from "./Score.style.module.scss";
-import { useEffect, useState } from "react";
 
 const Score = () => {
   const { score } = useSelector((state) => state[gameSliceName]);

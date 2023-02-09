@@ -2,14 +2,13 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { ANIMATION_LENGTH } from "../../config/GameAnimation";
 import { GESTURE_SRC } from "../../constant/Gesture";
 import { gameSliceName } from "../../store/features/Game";
 import { getRandomGesture } from "../../util/Game";
 import { gameActions } from "../../store/features/Game";
 import { getWinner } from "../../util/Game";
 
-import { FRAME_LENGTH } from "./House.config";
+import { ANIMATION_LENGTH, FRAME_LENGTH } from "./House.config";
 
 export const useHouse = () => {
   const { playerGesture } = useSelector((state) => state[gameSliceName]);

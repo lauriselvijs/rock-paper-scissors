@@ -1,4 +1,5 @@
 @use "../../style/utils/variable";
+@use "../../style/animation";
 
 @keyframes blink {
   0% {
@@ -19,7 +20,10 @@
 }
 
 .gameResultMsg {
+  @include animation.expand;
+
   animation: blink 1s linear 0s 3;
+  animation: expand 0.2s linear 0s 1;
   padding: 16px;
   text-align: center;
   text-transform: uppercase;

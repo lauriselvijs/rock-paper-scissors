@@ -1,8 +1,11 @@
 @use "../../style/utils/variable";
 @use "../../style/components/button";
+@use "../../style/animation";
 
 .playAgainBtn {
+  @include animation.expand;
   @include button.primary;
 
+  animation: expand 0.2s linear 0s 1;
   width: 100%;
 }
