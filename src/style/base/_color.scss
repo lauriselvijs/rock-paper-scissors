@@ -4,6 +4,7 @@ $secondary: hsl(0, 0%, 100%);
 
 $border: hsl(217, 16%, 45%);
 $btn-text: hsl(349, 71%, 52%);
+$overlay: hsla(0, 0%, 0%, 0.4);
 
 $radiant-bg-primary: hsl(237, 49%, 15%);
 $radiant-bg-secondary: hsl(214, 47%, 23%);
@@ -31,4 +32,5 @@ $radiant-bg-secondary: hsl(214, 47%, 23%);
   );
   --color-border: var(--imported-color-border, #{$border});
   --color-btn-text: var(--imported-color-btn-text, #{$btn-text});
+  --color-overlay: var(--imported-color-overlay, #{$overlay});
 }

@@ -2,14 +2,14 @@
 
 @mixin winner {
   background-image: radial-gradient(
-    hsla(0, 0%, 100%, 0.1) 0,
-    hsla(0, 0%, 100%, 0.1) 40%,
+    var(--color-radiant-bg-secondary) 0,
+    var(--color-radiant-bg-secondary) 40%,
     var(--color-radiant-bg-primary) 40%,
     var(--color-radiant-bg-primary) 41%,
-    hsla(0, 0%, 100%, 0.1) 54%,
+    var(--color-radiant-bg-secondary) 54%,
     var(--color-radiant-bg-primary) 54%,
     var(--color-radiant-bg-primary) 55%,
-    hsla(0, 0%, 100%, 0.1) 100%
+    var(--color-radiant-bg-secondary) 100%
   );
   border-radius: 50%;
   height: 600px;
