@@ -1,6 +1,6 @@
 import Game from "../Game";
 import Author from "../Author";
-import { useReloadOnOnline } from "../../hook/Online/Online.hook";
+import { useReloadOnOnline } from "../../hook/Network";
 
 const App = () => {
   useReloadOnOnline();
