@@ -4,41 +4,39 @@
 .enter {
   opacity: 0;
   transform: scale(0.8);
+
+  @include media.mobile {
+    opacity: 1;
+    transform: translateY(-105vh);
+  }
 }
 
 .enterActive {
   opacity: 1;
   transform: scale(1);
   transition: opacity 0.5s, transform 0.5s;
+
+  @include media.mobile {
+    transform: translateY(0);
+    transition: transform 0.5s;
+  }
 }
 
 .exit {
   opacity: 1;
   transform: scale(1);
+
+  @include media.mobile {
+    transform: translateY(0);
+  }
 }
 
 .exitActive {
   opacity: 0;
   transform: scale(0.8);
   transition: opacity 0.5s, transform 0.5s;
-}
 
-@include media.mobile {
-  .enter {
-    opacity: 1;
-    transform: translateY(-105vh);
-  }
-
-  .enterActive {
-    transform: translateY(0);
-    transition: transform 0.5s;
-  }
-
-  .exit {
-    transform: translateY(0);
-  }
-
-  .exitActive {
+  @include media.mobile {
     opacity: 1;
     transform: translateY(-105vh);
     transition: transform 0.5s;
