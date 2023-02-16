@@ -45,11 +45,12 @@ const RulesModal = () => {
             className={styles.closeBtn}
             onClick={onCloseBtnClick}
           >
-            <img src={closeIcon} alt="Close icon" width={20} height={20} />
+            <img src={closeIcon} role="img" alt="Close icon" width={20} height={20} />
           </button>
           <img
             src={rulesImg}
             alt="How to play"
+            role="img"
             className={styles.img}
             width={304}
             height={270}
